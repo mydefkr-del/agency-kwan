@@ -1,0 +1,1231 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DEF 드에프 · 홈쇼핑도, 미국 진출도</title>
+<meta name="description" content="드에프는 뷰티 브랜드의 홈쇼핑 론칭과 카테고리 제한 없는 미국 진출을 함께 하는 에이전시입니다. 하나만 맡기셔도, 둘 다 맡기셔도 됩니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..112,600..900&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#121212;
+  --ink-2:#4a4a4a;
+  --ink-3:#8c8c8c;
+  --line:#e3e3e3;
+  --bg-2:#f4f5f6;
+  --slot:#eceef1;
+  --navy:#0f1c2e;
+  --accent:#00866f;
+  --dot:#00c4a7;
+  --red:#d7263d;
+  --hd:76px;
+  --en:"Archivo","Noto Sans KR",sans-serif;
+  --kr:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --wrap:1280px;
+  --g:clamp(20px,4vw,48px);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-padding-top:calc(var(--hd) + 24px)}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--kr);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:anywhere}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+h1,h2,h3,h4,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--g)}
+.dot{color:var(--dot)}
+
+/* 이미지 자리 (사진이 준비되면 교체) */
+.slot{position:relative;background:var(--slot);display:grid;place-items:center;color:#a3a8b0;font-size:13px;font-weight:500;text-align:center;padding:16px;overflow:hidden}
+.slot::before{content:"";position:absolute;inset:0;border:1px solid #e1e4e8}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.r21{aspect-ratio:21/9}.r16{aspect-ratio:16/9}.r43{aspect-ratio:4/3}.r45{aspect-ratio:4/5}.r11{aspect-ratio:1/1}
+.dk .slot{background:#1b2a3f;color:#6f7f95}
+.dk .slot::before{border-color:#25364d}
+
+/* header */
+.hd{position:fixed;inset:0 0 auto 0;z-index:100;height:var(--hd);background:#fff;border-bottom:1px solid var(--line)}
+.hd .wrap{height:100%;display:flex;align-items:center;gap:36px}
+.logo{font-family:var(--en);font-variation-settings:"wdth" 112;font-weight:900;font-size:27px;letter-spacing:-.04em;line-height:1}
+.logo i{font-style:normal;color:var(--dot)}
+.nav{margin-left:auto;display:flex;gap:28px}
+.nav a{font-weight:700;font-size:16px;color:var(--ink-2)}
+.nav a:hover,.nav a.on{color:var(--ink)}
+.nav a.on{box-shadow:inset 0 -2px 0 var(--dot)}
+.ask{display:inline-flex;align-items:center;height:42px;padding:0 20px;background:var(--ink);color:#fff;font-weight:700;font-size:15px}
+.ask:hover{background:var(--accent)}
+.mbtn{display:none;margin-left:auto;height:42px;padding:0 16px;border:1px solid var(--line);background:#fff;font-weight:700;font-size:14px;cursor:pointer}
+@media (max-width:1080px){
+  .nav,.hd .ask{display:none}
+  .mbtn{display:block}
+  .nav.open{display:flex;flex-direction:column;gap:0;position:fixed;top:var(--hd);left:0;right:0;height:calc(100dvh - var(--hd));background:#fff;padding:16px var(--g)}
+  .nav.open a{font-size:26px;padding:16px 0;border-bottom:1px solid var(--line);color:var(--ink);box-shadow:none}
+}
+
+/* layout */
+.page{display:none;padding-top:var(--hd)}
+.page.on{display:block}
+.sec{padding-block:clamp(88px,10vw,136px)}
+.sec.bg{background:var(--bg-2)}
+.sec.dk{background:var(--navy);color:#fff}
+.lab{display:block;font-size:14px;font-weight:700;color:var(--accent);margin-bottom:16px}
+.dk .lab{color:var(--dot)}
+.h2{font-size:clamp(30px,3.6vw,48px);line-height:1.3;font-weight:700;letter-spacing:-.03em}
+.lead{margin-top:18px;font-size:clamp(17px,1.5vw,19px);color:var(--ink-2);max-width:52ch;line-height:1.75}
+.dk .lead{color:#b9c3cf}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,64px)}
+.more{font-weight:700;font-size:16px;border-bottom:2px solid currentColor;padding-bottom:3px;white-space:nowrap}
+.more::after{content:" →"}
+.more:hover{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 28px;font-weight:700;font-size:16px;border:1px solid transparent;cursor:pointer}
+.btn.k{background:var(--ink);color:#fff}
+.btn.k:hover{background:var(--accent)}
+.btn.o{border-color:var(--ink);background:#fff}
+.btn.o:hover{background:var(--ink);color:#fff}
+.btn.w{background:#fff;color:var(--ink)}
+.btn.w:hover{background:var(--dot)}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.note{margin-top:20px;font-size:14px;color:var(--ink-3)}
+.dk .note{color:#8495ab}
+
+/* sub page head */
+.ph{padding-block:clamp(72px,9vw,120px) clamp(48px,5vw,72px);border-bottom:1px solid var(--line)}
+.ph h1{font-size:clamp(36px,5vw,64px);line-height:1.25;font-weight:700;letter-spacing:-.035em}
+.ph p{margin-top:22px;font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);max-width:46ch}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.jump a{border:1px solid var(--line);padding:9px 16px;font-weight:700;font-size:14px}
+.jump a:hover{border-color:var(--ink)}
+
+/* home hero */
+.hero{padding-top:clamp(64px,8vw,112px)}
+.hero .en{font-family:var(--en);font-variation-settings:"wdth" 100;font-weight:800;font-size:clamp(46px,7.4vw,108px);line-height:.98;letter-spacing:-.045em}
+.hero .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:end;margin-top:32px}
+.hero .ko{font-size:clamp(21px,2.2vw,30px);font-weight:700;line-height:1.5;letter-spacing:-.02em}
+.hero .ko span{display:block;margin-top:8px;font-size:.62em;font-weight:500;color:var(--ink-2);letter-spacing:0}
+.hero .slot{margin-top:clamp(48px,6vw,80px)}
+@media (max-width:760px){.hero .row{grid-template-columns:1fr}}
+
+/* two markets */
+.markets{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.mk{display:grid;gap:20px;align-content:start}
+.mk .tag{font-size:14px;font-weight:700;color:var(--accent)}
+.mk h3{font-size:clamp(24px,2.4vw,32px);font-weight:700;line-height:1.4;letter-spacing:-.025em}
+.mk p{color:var(--ink-2)}
+.mk ul{display:grid;gap:8px;border-top:1px solid var(--line);padding-top:16px}
+.mk li{display:flex;gap:10px;font-weight:500}
+.mk li::before{content:"";flex:none;width:6px;height:6px;background:var(--dot);margin-top:.75em}
+@media (max-width:860px){.markets{grid-template-columns:1fr}}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid currentColor}
+.nums li{padding:26px 22px 0 0;display:grid;gap:6px;align-content:start}
+.nums li + li{padding-left:22px;border-left:1px solid var(--line)}
+.dk .nums li + li{border-color:rgba(255,255,255,.18)}
+.nums b{font-family:var(--en);font-weight:800;font-size:clamp(40px,4.8vw,68px);letter-spacing:-.04em;line-height:1;white-space:nowrap}
+.nums b small{font-family:var(--kr);font-size:.36em;font-weight:500;margin-left:4px;letter-spacing:0}
+.nums span{font-size:16px;font-weight:500}
+.nums em{font-style:normal;font-size:13px;color:var(--ink-3)}
+.dk .nums em{color:#8495ab}
+@media (max-width:860px){.nums{grid-template-columns:1fr 1fr;row-gap:30px}.nums li:nth-child(3){padding-left:0;border-left:0}}
+
+/* five axes */
+.five{display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--ink)}
+.five li{padding:26px 20px 30px 0;display:grid;gap:10px;align-content:start}
+.five li + li{padding-left:20px;border-left:1px solid var(--line)}
+.five .n{font-size:13px;font-weight:700;color:var(--ink-3)}
+.five h3{font-size:20px;font-weight:700;line-height:1.4}
+.five p{font-size:14.5px;color:var(--ink-2);line-height:1.8}
+@media (max-width:1000px){.five{grid-template-columns:1fr 1fr;row-gap:24px}.five li + li{padding-left:0;border-left:0}.five li:nth-child(even){padding-left:20px;border-left:1px solid var(--line)}}
+@media (max-width:520px){.five{grid-template-columns:1fr}.five li:nth-child(even){padding-left:0;border-left:0}}
+
+/* track record rows */
+.rec{border-top:2px solid var(--ink)}
+.rec li{display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px 40px;padding:28px 0;border-bottom:1px solid var(--line)}
+.rec .yr{font-size:14px;color:var(--ink-3);font-weight:500}
+.rec h3{font-size:22px;font-weight:700;margin-top:2px}
+.rec p{font-size:16px;color:var(--ink-2);line-height:1.85}
+.rec p b{color:var(--ink);font-weight:700}
+.dk .rec{border-color:#fff}
+.dk .rec li{border-color:rgba(255,255,255,.16)}
+.dk .rec p{color:#b9c3cf}
+.dk .rec p b{color:#fff}
+@media (max-width:760px){.rec li{grid-template-columns:1fr}}
+
+/* split (image + text) */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,88px);align-items:center}
+.split.rev .slot{order:2}
+.split h2{margin-top:0}
+@media (max-width:860px){.split{grid-template-columns:1fr}.split.rev .slot{order:0}}
+
+/* two doors */
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.door{border:1px solid var(--line);padding:clamp(28px,3.4vw,44px);display:grid;gap:14px;align-content:start;background:#fff}
+.door .k{font-size:14px;font-weight:700;color:var(--accent)}
+.door h3{font-size:clamp(22px,2.2vw,28px);font-weight:700;line-height:1.4}
+.door p{color:var(--ink-2)}
+.door .btn{justify-self:start;margin-top:10px}
+@media (max-width:760px){.doors{grid-template-columns:1fr}}
+
+/* cta */
+.cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end}
+.cta h2{font-size:clamp(30px,4vw,52px);line-height:1.3;font-weight:700;letter-spacing:-.03em}
+.cta p{margin-top:14px;color:#b9c3cf;font-size:17px}
+@media (max-width:760px){.cta{grid-template-columns:1fr}}
+
+/* cards */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cd{display:grid;gap:12px;align-content:start}
+.cd .cat{font-size:14px;color:var(--ink-3);margin-top:6px}
+.cd h3{font-size:20px;font-weight:700;line-height:1.45}
+.cd .res{font-family:var(--en);font-weight:800;font-size:22px;color:var(--accent);letter-spacing:-.02em}
+@media (max-width:860px){.cards3{grid-template-columns:1fr}}
+
+/* about */
+.big-n{font-family:var(--en);font-weight:800;font-size:clamp(72px,11vw,160px);line-height:.9;letter-spacing:-.05em}
+.q3{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid #fff}
+.q3 li{padding:26px 24px 0 0;display:grid;gap:8px}
+.q3 li + li{padding-left:24px;border-left:1px solid rgba(255,255,255,.18)}
+.q3 .n{font-size:13px;color:#8495ab}
+.q3 h3{font-size:26px;font-weight:700}
+.q3 p{color:#b9c3cf}
+@media (max-width:760px){.q3{grid-template-columns:1fr;row-gap:20px}.q3 li + li{padding-left:0;border-left:0}}
+.creed{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink)}
+.creed li{padding:28px 28px 30px 0;border-bottom:1px solid var(--line);display:grid;gap:8px}
+.creed li:nth-child(even){padding-left:28px;border-left:1px solid var(--line)}
+.creed h3{font-size:20px;font-weight:700;line-height:1.5}
+.creed p{font-size:15.5px;color:var(--ink-2)}
+@media (max-width:760px){.creed{grid-template-columns:1fr}.creed li:nth-child(even){padding-left:0;border-left:0}}
+.people{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.pp{display:grid;gap:12px;align-content:start}
+.pp .rl{font-size:13px;font-weight:700;color:var(--accent);margin-top:6px}
+.pp h3{font-size:22px;font-weight:700}
+.pp h3 small{font-family:var(--en);font-size:14px;font-weight:600;color:var(--ink-3);margin-left:8px}
+.pp p{font-size:15px;color:var(--ink-2);line-height:1.7}
+@media (max-width:960px){.people{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.people{grid-template-columns:1fr}}
+.hist{border-top:2px solid var(--ink)}
+.hist li{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.hist b{font-family:var(--en);font-weight:800;font-size:22px}
+.hist span{font-size:16px}
+.hist span em{font-style:normal;color:var(--ink-3)}
+.hist li.now b{color:var(--accent)}
+.kv li{display:grid;grid-template-columns:110px 1fr;padding:15px 0;border-bottom:1px solid var(--line)}
+.kv li:first-child{border-top:2px solid var(--ink)}
+.kv b{font-weight:500;color:var(--ink-3)}
+.partner{display:grid;grid-template-columns:200px 1fr;gap:clamp(28px,4vw,56px);align-items:center}
+.partner img{width:100%}
+.partner h3{font-size:clamp(22px,2.4vw,28px);font-weight:700;line-height:1.45}
+.partner p{margin-top:10px;color:var(--ink-2)}
+@media (max-width:640px){.partner{grid-template-columns:1fr}.partner img{max-width:180px}}
+
+/* services accordion */
+.svc{border-top:2px solid var(--ink)}
+.svc details{border-bottom:1px solid var(--line)}
+.svc summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:70px minmax(0,1fr) minmax(0,1.2fr) 32px;gap:16px 28px;align-items:baseline;padding:26px 0}
+.svc summary::-webkit-details-marker{display:none}
+.svc .n{font-family:var(--en);font-weight:700;color:var(--ink-3)}
+.svc h3{font-size:clamp(20px,2vw,24px);font-weight:700}
+.svc .one{color:var(--ink-2)}
+.svc .pm{font-size:26px;font-weight:300;line-height:1;transition:transform .2s;justify-self:end}
+.svc details[open] .pm{transform:rotate(45deg)}
+.svc .body{padding:0 0 30px 98px;display:grid;gap:14px;max-width:880px}
+.svc .body p{color:var(--ink-2);line-height:1.85}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:13px;font-weight:500;padding:5px 11px;background:var(--bg-2)}
+.grp{margin-top:56px}
+.grp:first-child{margin-top:0}
+.grp > h3{font-size:15px;font-weight:700;color:var(--accent);margin-bottom:14px}
+@media (max-width:760px){.svc summary{grid-template-columns:44px 1fr 24px}.svc .one{grid-column:2}.svc .pm{grid-row:1;grid-column:3}.svc .body{padding-left:60px}}
+.starts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.st{background:#fff;padding:26px 24px;display:grid;gap:12px;align-content:start;border-top:3px solid var(--ink)}
+.st h3{font-size:19px;font-weight:700}
+.st .k{font-size:13px;color:var(--ink-3);font-weight:700}
+.st p{font-size:15px;color:var(--ink-2)}
+.st .arr{font-size:18px;color:var(--accent);font-weight:700}
+@media (max-width:1000px){.starts{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.starts{grid-template-columns:1fr}}
+.models{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-left:1px solid var(--line)}
+.models li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 22px;display:grid;gap:8px;align-content:start;background:#fff}
+.models h3{font-size:18px;font-weight:700}
+.models p{font-size:14.5px;color:var(--ink-2)}
+.models li.pref{background:var(--navy);color:#fff}
+.models li.pref p{color:#b9c3cf}
+@media (max-width:960px){.models{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.models{grid-template-columns:1fr}}
+.faq{border-top:2px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-size:18px;font-weight:700;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:26px;font-weight:300}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 22px;color:var(--ink-2)}
+
+/* work */
+.facts3{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink)}
+.facts3 li{padding:22px 22px 0 0;display:grid;gap:6px;align-content:start}
+.facts3 li + li{padding-left:22px;border-left:1px solid var(--line)}
+.facts3 b{font-size:15px;color:var(--accent)}
+.facts3 span{font-size:16px;line-height:1.75}
+@media (max-width:760px){.facts3{grid-template-columns:1fr;row-gap:18px}.facts3 li + li{padding-left:0;border-left:0}}
+
+/* creators / MCN */
+.seven{display:grid;grid-template-columns:repeat(7,1fr);border-top:2px solid #fff}
+.seven li{padding:20px 10px 0 0;display:grid;gap:4px}
+.seven li + li{padding-left:10px;border-left:1px solid rgba(255,255,255,.18)}
+.seven .n{font-family:var(--en);font-weight:800;font-size:26px;color:var(--dot)}
+.seven b{font-size:16px}
+@media (max-width:960px){.seven{grid-template-columns:repeat(4,1fr);row-gap:22px}.seven li:nth-child(5){border-left:0;padding-left:0}}
+@media (max-width:480px){.seven{grid-template-columns:1fr 1fr}.seven li:nth-child(odd){border-left:0;padding-left:0}}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink)}
+.trio li{padding:24px 24px 0 0;display:grid;gap:8px}
+.trio li + li{padding-left:24px;border-left:1px solid var(--line)}
+.trio h3{font-size:22px;font-weight:700}
+.trio p{color:var(--ink-2)}
+@media (max-width:760px){.trio{grid-template-columns:1fr;row-gap:20px}.trio li + li{padding-left:0;border-left:0}}
+.flow6{display:grid;grid-template-columns:repeat(6,1fr);border-top:2px solid var(--ink)}
+.flow6 li{padding:20px 14px 0 0;display:grid;gap:6px;align-content:start}
+.flow6 li + li{padding-left:14px;border-left:1px solid var(--line)}
+.flow6 b{font-size:16px}
+.flow6 span{font-size:14px;color:var(--ink-2)}
+@media (max-width:960px){.flow6{grid-template-columns:repeat(3,1fr);row-gap:22px}.flow6 li:nth-child(4){border-left:0;padding-left:0}}
+@media (max-width:520px){.flow6{grid-template-columns:1fr 1fr}.flow6 li:nth-child(odd){border-left:0;padding-left:0}}
+.days{display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--ink)}
+.days li{padding:20px 16px 0 0;display:grid;gap:6px;align-content:start}
+.days li + li{padding-left:16px;border-left:1px solid var(--line)}
+.days b{font-family:var(--en);font-weight:800;font-size:20px;color:var(--accent)}
+.days h4{font-size:17px;font-weight:700}
+.days p{font-size:14.5px;color:var(--ink-2)}
+@media (max-width:960px){.days{grid-template-columns:1fr 1fr;row-gap:22px}.days li + li{border-left:0;padding-left:0}}
+
+/* contact */
+.ct{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:clamp(40px,6vw,96px);align-items:start}
+form.fm{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fm .full{grid-column:1/-1}
+.fm label.f span{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
+.fm label.f span i,.fm i.req{font-style:normal;color:var(--red);margin-left:2px}
+.fm input[type=text],.fm input[type=email],.fm input[type=tel],.fm textarea{width:100%;height:52px;border:0;border-bottom:2px solid var(--line);padding:0 2px;font:inherit;font-size:17px;background:transparent;border-radius:0;color:var(--ink)}
+.fm textarea{height:130px;padding-top:10px;resize:vertical}
+.fm input:focus,.fm textarea:focus{outline:none;border-bottom-color:var(--ink)}
+.fm fieldset{border:0;margin:0;padding:0;min-width:0}
+.fm legend{font-size:14px;font-weight:700;margin-bottom:10px}
+.pick{display:flex;flex-wrap:wrap;gap:8px}
+.pick label{cursor:pointer}
+.pick input{position:absolute;opacity:0;pointer-events:none}
+.pick span{display:block;padding:10px 16px;border:1px solid var(--line);font-size:15px;font-weight:500}
+.pick input:checked + span{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pick input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-2);cursor:pointer}
+.agree input{margin-top:4px;accent-color:var(--ink)}
+.fm .go{height:60px;background:var(--ink);color:#fff;border:0;font-size:17px;font-weight:700;cursor:pointer}
+.fm .go:hover{background:var(--accent)}
+.fm output{font-size:14px;color:var(--accent);min-height:1.4em}
+.fm output.err{color:var(--red)}
+@media (max-width:860px){.ct{grid-template-columns:1fr}form.fm{grid-template-columns:1fr}}
+
+/* footer */
+.ft{background:#111;color:#9a9da2;font-size:14px;padding-block:60px 40px}
+.ft .t{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid #2b2d31}
+.ft .logo{color:#fff;font-size:30px}
+.ft nav{display:flex;flex-wrap:wrap;gap:8px 24px;font-weight:500}
+.ft nav a{color:#d5d7da}
+.ft nav a:hover{color:#fff}
+.ft .addr{margin-top:22px;display:flex;flex-wrap:wrap;gap:4px 20px;line-height:1.8}
+.ft .cp{margin-top:10px;color:#5f6368;font-size:13px}
+
+/* v14 additions */
+.hero .lab{margin-bottom:22px}
+.hero h1.kh{font-size:clamp(40px,6.2vw,92px);line-height:1.18;font-weight:700;letter-spacing:-.045em}
+.mk .tag{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.chip{font-style:normal;font-size:12px;font-weight:700;color:var(--ink);background:var(--bg-2);padding:3px 9px}
+.slogan{font-family:var(--en);font-variation-settings:"wdth" 100;font-weight:800;font-size:clamp(46px,6.6vw,100px);line-height:.98;letter-spacing:-.045em}
+.ph p.slogan{margin-top:4px;font-size:clamp(46px,6.6vw,100px);color:var(--ink);max-width:none}
+.ph p.slogan + p{margin-top:28px}
+.dk .slogan + .lead{margin-top:28px}
+.models.c3{grid-template-columns:repeat(3,1fr)}
+.models .k{font-family:var(--en);font-weight:800;font-size:15px;color:var(--ink-3)}
+.models li.pref .k{color:var(--dot)}
+.models.c3 h3{font-size:24px}
+.models.c3 li{padding:32px 28px}
+@media (max-width:760px){.models.c3{grid-template-columns:1fr}}
+.starts.s3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:860px){.starts.s3{grid-template-columns:1fr}}
+.leaders{display:grid;grid-template-columns:repeat(2,minmax(0,420px));gap:clamp(24px,4vw,56px)}
+.leaders .pp h3{font-size:26px}
+.leaders .pp p{font-size:16px}
+@media (max-width:640px){.leaders{grid-template-columns:1fr}}
+.partner .lab{margin-bottom:10px}
+
+/* v15 additions */
+.subnav{position:sticky;top:var(--hd);z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.subnav .wrap{display:flex;gap:0 26px;align-items:stretch;height:52px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.subnav .wrap::-webkit-scrollbar{display:none}
+.subnav b{font-size:13px;color:var(--accent);display:flex;align-items:center;padding-right:6px}
+.subnav a{font-size:15px;font-weight:700;color:var(--ink-3);display:flex;align-items:center}
+.subnav a:hover{color:var(--ink)}
+.subnav a.on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--dot)}
+.subnav a.go{margin-left:auto;color:var(--accent)}
+.ticks{display:grid;gap:8px;margin-top:18px}
+.ticks li{display:flex;gap:10px;color:var(--ink-2)}
+.ticks li::before{content:"";flex:none;width:6px;height:6px;background:var(--dot);margin-top:.75em}
+.ph h1.enh{font-family:var(--en);font-weight:800;letter-spacing:-.04em;line-height:1.08}
+.flow6.f4{grid-template-columns:repeat(4,1fr)}
+.flow6.f4 b{font-family:var(--en);font-weight:800;font-size:20px;color:var(--accent)}
+@media (max-width:760px){.flow6.f4{grid-template-columns:1fr 1fr;row-gap:22px}.flow6.f4 li:nth-child(odd){border-left:0;padding-left:0}.flow6.f4 li:nth-child(even){border-left:1px solid var(--line);padding-left:14px}}
+.doors.d3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:960px){.doors.d3{grid-template-columns:1fr}}
+.fm label.f small{display:block;margin-top:6px;font-size:13px;color:var(--ink-3)}
+.sec.bg .fm input,.sec.bg .fm textarea{border-bottom-color:#d3d6da}
+form.fm.one{grid-template-columns:1fr}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="DEF 홈">DEF<i>.</i></a>
+    <nav class="nav" id="nav" aria-label="주 메뉴">
+      <a href="#about" data-nav="about">회사소개</a>
+      <a href="#homeshopping" data-nav="homeshopping">홈쇼핑</a>
+      <a href="#usa" data-nav="usa">미국 진출</a>
+      <a href="#work" data-nav="work">실적</a>
+      <a href="#contact" data-nav="contact">문의하기</a>
+    </nav>
+    <a class="ask" href="#contact">프로젝트 문의</a>
+    <button class="mbtn" id="mbtn" aria-controls="nav" aria-expanded="false">메뉴</button>
+  </div>
+</header>
+
+<main>
+<!-- ===================================================== HOME -->
+<div class="page" data-page="home" data-title="드에프 | 홈쇼핑도, 미국 진출도">
+  <section class="hero">
+    <div class="wrap">
+      <span class="lab">뷰티 브랜드 에이전시 드에프</span>
+      <h1 class="kh">홈쇼핑도, 미국 진출도.<br>드에프 한 곳에서.</h1>
+      <div class="row">
+        <p class="ko">하나만 맡기셔도, 둘 다 맡기셔도 됩니다.<span>뷰티 브랜드의 홈쇼핑 론칭과, 카테고리 제한 없는 미국 진출을 함께 하는 에이전시입니다.</span></p>
+        <div class="btns"><a class="btn k" href="#contact">프로젝트 문의</a><a class="btn o" href="#home--biz">사업 영역 보기</a></div>
+      </div>
+      <div class="slot r21">이미지 · 팀 회의 장면 (21:9)</div>
+    </div>
+  </section>
+
+  <section class="sec" id="home--biz">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">사업 영역</span><h2 class="h2">드에프의 사업은 두 가지입니다.</h2></div></div>
+      <div class="markets">
+        <article class="mk">
+          <div class="slot r16">이미지 · 홈쇼핑 방송 현장 (16:9)</div>
+          <span class="tag">사업 01 · 홈쇼핑 <em class="chip">뷰티 전문</em></span>
+          <h3>3년 연속 카테고리 1위를 만든<br>홈쇼핑 뷰티 벤더</h3>
+          <p>상품 기획부터 심의, 편성, 생방송, 방송 이후까지 직접 맡습니다.</p>
+          <a class="more" href="#homeshopping">홈쇼핑 사업</a>
+        </article>
+        <article class="mk">
+          <div class="slot r16">이미지 · 미국 현지 행사 · 크리에이터 촬영 (16:9)</div>
+          <span class="tag">사업 02 · 미국 진출 <em class="chip">카테고리 제한 없음</em></span>
+          <h3>한국 브랜드를 미국 시장에<br>소개하는 일</h3>
+          <p>크리에이터 캠페인, 아마존 · 타겟 입점, 현지 팝업까지. 뷰티가 아니어도 됩니다.</p>
+          <a class="more" href="#usa">미국 진출 사업</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dk">
+    <div class="wrap">
+      <ul class="nums">
+        <li><b>3<small>년 연속</small></b><span>홈쇼핑 카테고리 1위</span><em>홈쇼핑 · 2024 · 2025 · 2026</em></li>
+        <li><b>260<small>억 원</small></b><span>론칭 10개월 매출</span><em>홈쇼핑 · 헤어 · 두피</em></li>
+        <li><b>130<small>명</small></b><span>미국 크리에이터 네트워크</span><em>미국 진출</em></li>
+        <li><b>2017</b><span>미국 현지 사업 시작</span><em>미국 진출 · 현지 법인 운영</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap split">
+      <div>
+        <span class="lab">사업 01 · 홈쇼핑</span>
+        <h2 class="h2">방송에서 팔릴 상품을<br>방송 전에 만듭니다.</h2>
+        <p class="lead">현대홈쇼핑 · NS홈쇼핑 뷰티 MD 출신 대표들이 직접 맡습니다. 편성과 심의가 어떻게 정해지는지 알기 때문에, 준비 단계부터 방송에 맞춰 설계합니다.</p>
+        <div class="btns" style="margin-top:28px"><a class="more" href="#homeshopping">홈쇼핑 업무 범위</a></div>
+      </div>
+      <div class="slot r43">이미지 · 방송 준비 회의 (4:3)</div>
+    </div>
+    <div class="wrap" style="margin-top:64px">
+      <ol class="trio">
+        <li><h3>상품 기획</h3><p>카테고리, 컨셉, 제품명, 가격, 방송 구성</p></li>
+        <li><h3>심의 · 방송 준비</h3><p>근거 자료, 인서트 영상, 판넬, 입점과 편성</p></li>
+        <li><h3>방송 운영 · 이후</h3><p>생방송 대응, 추가 편성, 다른 홈쇼핑사 입점</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec bg">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">홈쇼핑 사례</span><h2 class="h2">시작은 달랐지만,<br>세 브랜드 모두 카테고리 1위.</h2></div><a class="more" href="#work">실적 전체</a></div>
+      <div class="cards3">
+        <article class="cd"><div class="slot r43"><img src="assets/case-a.jpg" alt="" loading="lazy"></div><span class="cat">헤어 · 두피 · 2024–25</span><h3>홈쇼핑 경험 없는 신설 법인, 10개월 만에 1위</h3><span class="res">260억 원 · 45차수 완판</span></article>
+        <article class="cd"><div class="slot r43"><img src="assets/case-b.jpg" alt="" loading="lazy"></div><span class="cat">마스크 · 팩 · 2025</span><h3>판매가 줄던 카테고리에 들어가 그해 1위</h3><span class="res">2025 카테고리 1위</span></article>
+        <article class="cd"><div class="slot r43"><img src="assets/case-c.jpg" alt="" loading="lazy"></div><span class="cat">스킨케어 · CJ온스타일 단독 · 2026</span><h3>여러 번 고전한 브랜드, 5개월 만에 1위</h3><span class="res">139억 원 · 13회 연속 매진</span></article>
+      </div>
+      <p class="note">브랜드명은 오프라인 미팅에서 공개합니다.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap partner">
+      <img src="assets/mediheal.jpg" alt="메디힐 마스크팩" loading="lazy">
+      <div><span class="lab">홈쇼핑 파트너</span><h3>메디힐 대한민국 유일 홈쇼핑 파트너사</h3><p>CJ온스타일 단독 방송을 진행하고 있고, 현대 · 롯데 · 신세계 홈쇼핑에서 드에프 운영 브랜드의 입점 제안을 받고 있습니다.</p></div>
+    </div>
+  </section>
+
+  <section class="sec dk">
+    <div class="wrap split">
+      <div>
+        <span class="lab">사업 02 · 미국 진출</span>
+        <p class="slogan">From Korea<br>to the USA<span class="dot">.</span></p>
+        <p class="lead">2017년부터 미국에서 직접 일해 온 팀이 맡습니다. 검증된 크리에이터 130명과 캠페인을 하고, 현지 판매처 입점까지 진행합니다. 화장품이 아닌 브랜드도 가능합니다.</p>
+        <div class="btns" style="margin-top:28px"><a class="btn w" href="#usa">미국 진출 사업 보기</a></div>
+      </div>
+      <div class="slot r43">이미지 · 미국 박람회 · 크리에이터 촬영 (4:3)</div>
+    </div>
+    <div class="wrap" style="margin-top:64px">
+      <ol class="q3">
+        <li><span class="n">01</span><h3>크리에이터 캠페인</h3><p>한 건씩, 또는 월 단위로</p></li>
+        <li><span class="n">02</span><h3>현지 입점</h3><p>아마존, 타겟, 얼타, 미국 백화점</p></li>
+        <li><span class="n">03</span><h3>팝업 · 박람회</h3><p>미국과 한국 팝업, 뷰티콘 · 코스모프로프</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec bg">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">드에프와 일하는 방법</span><h2 class="h2">필요한 것만 맡기세요.</h2><p class="lead">홈쇼핑 벤더와 미국 에이전시를 따로 찾지 않아도 됩니다. 드에프는 두 사업을 모두 합니다.</p></div></div>
+      <ul class="models c3">
+        <li><span class="k">01</span><h3>홈쇼핑만</h3><p>뷰티 브랜드의 홈쇼핑 론칭과 운영</p></li>
+        <li><span class="k">02</span><h3>미국 진출만</h3><p>카테고리 상관없이, 미국 크리에이터 캠페인과 현지 입점</p></li>
+        <li class="pref"><span class="k">03</span><h3>둘 다</h3><p>담당 디렉터 한 명이 두 사업의 일정을 함께 봅니다. 제품 근거 자료와 촬영 소스도 같이 씁니다.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec dk">
+    <div class="wrap cta"><div><h2>홈쇼핑, 미국, 또는 둘 다.<br>무엇이 필요하신가요?</h2><p>정하지 않으셨어도 괜찮습니다. 첫 미팅에서 브랜드 상황을 듣고 맞는 방법을 제안드립니다.</p></div><a class="btn w" href="#contact">프로젝트 문의</a></div>
+  </section>
+</div>
+
+<!-- ===================================================== ABOUT -->
+<div class="page" data-page="about" data-title="회사소개 | 드에프">
+  <section class="ph"><div class="wrap"><span class="lab">회사소개</span><h1>홈쇼핑과 미국 진출,<br>두 사업을 하는 에이전시.</h1><p>홈쇼핑에서 매년 카테고리 1위를 만드는 팀과, 미국 시장에서 한국 브랜드를 알려 온 팀이 함께 일합니다.</p>
+    <div class="jump"><a href="#about--people">대표</a><a href="#about--way">일하는 방식</a><a href="#about--brand">브랜딩 · 유통</a><a href="#about--history">연혁</a><a href="#about--overview">회사 개요</a></div></div></section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="markets">
+        <article class="mk"><span class="tag">홈쇼핑 · 뷰티 전문</span><h3>브랜드를 만들고, 방송에서 키웁니다.</h3><p>상품 기획과 브랜드 설계로 시작해 생방송, 추가 편성, 다른 홈쇼핑사 입점까지 맡습니다.</p></article>
+        <article class="mk"><span class="tag">미국 진출 · 카테고리 제한 없음</span><h3>한국 브랜드를 미국 시장에 소개합니다.</h3><p>크리에이터 캠페인으로 알리고, 현지 판매처 입점과 팝업으로 판매까지 잇습니다.</p></article>
+      </div>
+      <p class="lead" style="margin-top:48px;color:var(--ink);font-weight:700">두 사업은 각자 움직이고, 필요하면 한 팀처럼 함께 진행합니다.</p>
+    </div>
+  </section>
+
+  <section class="sec bg" id="about--people">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">대표</span><h2 class="h2">홈쇼핑 뷰티를<br>가장 가까이서 봐 온 두 사람.</h2></div></div>
+      <div class="leaders">
+        <article class="pp"><div class="slot r45">인물 사진 (4:5)</div><span class="rl">공동대표</span><h3>반연주<small>Yeonju Ban</small></h3><p>NS홈쇼핑과 현대홈쇼핑에서 뷰티 MD로 일했고, 현대홈쇼핑 뷰티 파트장을 지냈습니다. 2024년 드에프를 세운 뒤 3년 연속 카테고리 1위를 만들었습니다.</p></article>
+        <article class="pp"><div class="slot r45">인물 사진 (4:5)</div><span class="rl">공동대표</span><h3>안호성<small>Hosung Ahn</small></h3><p>현대홈쇼핑에서 뷰티 선임 MD와 데이터방송 파트장을 지냈고, 뷰티 커머스를 이끌었습니다. 드에프에서 상품 기획과 방송 전략을 맡고 있습니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="about--way">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">일하는 방식</span><h2 class="h2">드에프는 이렇게 일합니다.</h2></div></div>
+      <ul class="creed">
+        <li><h3>최근 성과로 말합니다.</h3><p>경력보다 최근 3년의 결과를 먼저 보여드립니다.</p></li>
+        <li><h3>담당 디렉터가 끝까지 맡습니다.</h3><p>첫 미팅부터 마무리까지 같은 사람이 봅니다.</p></li>
+        <li><h3>적게 맡습니다.</h3><p>동시에 맡는 브랜드 수를 제한하고, 맡은 브랜드에 집중합니다.</p></li>
+        <li><h3>준비는 충분히, 결정은 바로.</h3><p>방송과 캠페인 당일의 판단은 그 자리에서 내립니다.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec bg" id="about--brand">
+    <div class="wrap split">
+      <div><span class="lab">브랜딩 · 유통</span><h2 class="h2">브랜드를 만드는 일도<br>오래 해 왔습니다.</h2><p class="lead">두 사업 모두 브랜드 만들기부터 시작할 수 있습니다. 브랜드 스토리, CI · BI, 패키지와 제품 디자인을 맡고, 면세점 · 백화점 입점과 운영도 해 왔습니다.</p></div>
+      <div class="slot r43">이미지 · 디자인 작업물 (4:3)</div>
+    </div>
+    <div class="wrap" style="margin-top:56px"><ul class="facts3">
+      <li><b>디자인</b><span>진에어 디자인 리뉴얼 · 대한항공 50주년 엠블럼 · 평창 올림픽 기념 보딩패스</span></li>
+      <li><b>유통</b><span>롯데 · 신세계 · 신라 · 현대 · 공항 면세점, 백화점, 편집숍 입점과 운영</span></li>
+      <li><b>해외 브랜드 국내 론칭</b><span>영국 향수 펜할리곤스, 일본 뷰티 기기 야만</span></li>
+    </ul></div>
+  </section>
+
+  <section class="sec" id="about--history">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">연혁</span><h2 class="h2">드에프가 만든 3년.</h2></div></div>
+      <ol class="hist">
+        <li class="now"><b>2026</b><span>스킨케어 카테고리 1위 <em>— 5개월 139억 원 · 13회 연속 매진</em> · 크리에이터 사업 시작</span></li>
+        <li><b>2025</b><span>마스크 · 팩 카테고리 1위 · 메디힐 대한민국 유일 홈쇼핑 파트너사</span></li>
+        <li><b>2024</b><span>드에프 설립 · 헤어 · 두피 카테고리 1위 <em>— 10개월 260억 원</em></span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec bg" id="about--overview">
+    <div class="wrap split" style="align-items:start">
+      <div><span class="lab">회사 개요</span><h2 class="h2">한눈에 보는 드에프</h2></div>
+      <ul class="kv">
+        <li><b>회사명</b><span>주식회사 드에프 (DEF Inc.)</span></li>
+        <li><b>대표</b><span>반연주 · 안호성</span></li>
+        <li><b>사업</b><span>홈쇼핑 (뷰티) · 미국 진출 (전 카테고리)</span></li>
+        <li><b>홈쇼핑</b><span>2024 · 2025 · 2026 카테고리 1위</span></li>
+        <li><b>미국</b><span>2017년부터 현지 사업 · 크리에이터 130명</span></li>
+        <li><b>소재지</b><span>서울특별시 송파구 법원로 128 SKV1 B1005</span></li>
+        <li><b>문의</b><span>def@deflab.kr</span></li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- ===================================================== HOMESHOPPING -->
+<div class="page" data-page="homeshopping" data-title="홈쇼핑 | 드에프">
+  <section class="ph"><div class="wrap"><span class="lab">사업 01 · 홈쇼핑 · 뷰티 전문</span><h1>홈쇼핑 뷰티 카테고리 1위,<br>3년 연속 만들었습니다.</h1><p>상품 기획부터 방송 이후까지 드에프 팀이 직접 맡습니다. 홈쇼핑이 처음인 브랜드도 괜찮습니다.</p>
+    <div class="jump"><a href="#homeshopping--scope">업무 범위</a><a href="#homeshopping--model">협업 방식</a><a href="#homeshopping--process">진행 순서</a><a href="#homeshopping--faq">자주 묻는 질문</a></div></div></section>
+
+  <section class="sec dk">
+    <div class="wrap">
+      <ul class="nums">
+        <li><b>3<small>년 연속</small></b><span>카테고리 1위</span><em>2024 · 2025 · 2026</em></li>
+        <li><b>75<small>%</small></b><span>신상품 성공률</span><em>업계 평균 20%</em></li>
+        <li><b>260<small>억 원</small></b><span>론칭 10개월 매출</span><em>헤어 · 두피</em></li>
+        <li><b>13<small>회</small></b><span>연속 매진</span><em>스킨케어 · 2026</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="homeshopping--scope">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">업무 범위</span><h2 class="h2">첫 방송까지 필요한 일은<br>드에프가 다 합니다.</h2><p class="lead">항목을 누르면 자세한 내용을 볼 수 있습니다.</p></div></div>
+      <div class="svc">
+        <details open><summary><span class="n">01</span><h3>상품 기획 · 개발</h3><span class="one">방송에서 팔릴 상품을 먼저 설계합니다.</span><span class="pm">+</span></summary><div class="body"><p>시장 조사로 들어갈 카테고리를 고르고, 컨셉 · 제품명 · 가격을 정합니다. 제조사 선정과 샘플링, 내용물 확정, 인체적용시험 설계, 출시 일정까지 함께합니다.</p><div class="tags"><span>카테고리 선정</span><span>컨셉 · 제품명 · 가격</span><span>제조사 · 내용물</span><span>인체적용시험</span></div></div></details>
+        <details><summary><span class="n">02</span><h3>심의 · QA</h3><span class="one">홈쇼핑사별 심의를 통과할 근거를 준비합니다.</span><span class="pm">+</span></summary><div class="body"><p>문안 검수, 필수 서류, 광고 표현 근거 자료, 상세페이지 검수를 맡습니다. 인서트 영상 · 멘트 · 판넬에 쓰이는 표현의 근거를 정리해 홈쇼핑사별 심의에 대응합니다.</p><div class="tags"><span>문안 검수</span><span>근거 자료</span><span>홈쇼핑사별 심의</span></div></div></details>
+        <details><summary><span class="n">03</span><h3>방송 준비</h3><span class="one">인서트 영상부터 사전 회의까지.</span><span class="pm">+</span></summary><div class="body"><p>인서트 영상 업체 섭외, 콘티, 제작과 수정, 납품을 진행합니다. 판넬을 만들고, MD · PD · 쇼호스트와 사전 전략 회의를 합니다.</p><div class="tags"><span>인서트 영상</span><span>판넬</span><span>사전 전략 회의</span></div></div></details>
+        <details><summary><span class="n">04</span><h3>입점 · 편성 · 방송 운영</h3><span class="one">방송 시간을 확보하고 생방송까지 운영합니다.</span><span class="pm">+</span></summary><div class="body"><p>판매 채널 선정, 입점, 방송 특약과 수수료를 협의합니다. 편성 전략을 세우고 방송 시간을 확보합니다. 방송 구성과 가격, 배송 방식, 사전 공급 계획까지 챙깁니다.</p><div class="tags"><span>입점 · 계약</span><span>편성</span><span>생방송 운영</span><span>물류 · 공급</span></div></div></details>
+        <details><summary><span class="n">05</span><h3>방송 이후</h3><span class="one">첫 방송으로 끝내지 않습니다.</span><span class="pm">+</span></summary><div class="body"><p>방송 결과를 근거로 추가 편성을 잡고, 다른 홈쇼핑사 입점을 진행합니다. 재구매 관리와 다음 물량 계획, 라인 확장까지 이어서 맡습니다.</p><div class="tags"><span>추가 편성</span><span>다른 홈쇼핑사 입점</span><span>라인 확장</span></div></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec bg" id="homeshopping--model">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">협업 방식</span><h2 class="h2">필요한 만큼, 또는 처음부터 끝까지.</h2></div></div>
+      <ul class="models">
+        <li><h3>운영</h3><p>제품이 준비돼 있을 때. 입점, 심의, 방송 운영을 맡습니다.</p></li>
+        <li><h3>기획</h3><p>방송용 상품 컨셉과 구성만 필요할 때.</p></li>
+        <li><h3>기획 + 운영</h3><p>상품 기획부터 방송 운영까지.</p></li>
+        <li class="pref"><h3>브랜드 파트너</h3><p>위의 전부에 브랜드 이름 · 디자인, 라인 확장, 방송 이후 성장까지. 1위 사례 세 건 모두 이 방식이었습니다.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="homeshopping--process">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">진행 순서</span><h2 class="h2">첫 미팅부터 추가 편성까지.</h2></div></div>
+      <ol class="flow6">
+        <li><b>상담</b><span>제품과 지금 상황을 듣습니다.</span></li>
+        <li><b>진단</b><span>맞는 홈쇼핑사와 카테고리를 제안합니다.</span></li>
+        <li><b>상품 설계</b><span>컨셉, 구성, 가격을 정합니다.</span></li>
+        <li><b>방송 준비</b><span>심의, 영상, 판넬, 편성.</span></li>
+        <li><b>론칭</b><span>생방송을 함께 운영합니다.</span></li>
+        <li><b>추가 편성</b><span>결과를 근거로 다음 방송을 잡습니다.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec bg" id="homeshopping--faq">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">자주 묻는 질문</span><h2 class="h2">궁금하신 것들.</h2></div></div>
+      <div class="faq">
+        <details><summary>홈쇼핑이 처음이어도 되나요?</summary><p>네. 홈쇼핑 경험이 없던 신설 법인이 10개월 만에 카테고리 1위를 했습니다.</p></details>
+        <details><summary>아직 제품이 없어도 되나요?</summary><p>네. 제조사 선정과 내용물 개발부터 같이 합니다.</p></details>
+        <details><summary>뷰티가 아닌 제품도 가능한가요?</summary><p>홈쇼핑 사업은 뷰티 전문입니다. 다른 카테고리는 미국 진출 사업으로 상담해 드릴 수 있습니다.</p></details>
+        <details><summary>비용은 어떻게 정하나요?</summary><p>협업 방식과 범위에 따라 다릅니다. 첫 미팅 후 안내드립니다.</p></details>
+        <details><summary>레퍼런스를 볼 수 있나요?</summary><p>브랜드 보호를 위해 오프라인 미팅에서 직접 보여드립니다.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="doors">
+        <article class="door"><span class="k">홈쇼핑 상담</span><h3>제품 이야기부터 들려주세요.</h3><p>정리가 덜 됐어도 괜찮습니다. 대표가 직접 읽고 연락드립니다.</p><a class="btn k" href="#contact">홈쇼핑 상담 신청</a></article>
+        <article class="door"><span class="k">미국도 함께</span><h3>홈쇼핑을 맡기면서, 미국 진출도 함께.</h3><p>드에프는 미국 진출 사업도 합니다. 다른 회사를 따로 찾지 않아도 됩니다.</p><a class="btn o" href="#usa">미국 진출 사업 보기</a></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================================================== WORK -->
+<div class="page" data-page="work" data-title="실적 | 드에프">
+  <section class="ph"><div class="wrap"><span class="lab">실적</span><h1>숫자로 확인하세요.</h1><p>홈쇼핑, 미국 진출, 브랜딩 · 유통에서 해 온 일입니다.</p>
+    <div class="jump"><a href="#work--homeshopping">홈쇼핑</a><a href="#work--usa">미국 진출</a><a href="#work--brand">브랜딩</a><a href="#work--retail">유통</a></div></div></section>
+
+  <section class="sec" id="work--homeshopping">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">홈쇼핑</span><h2 class="h2">출발점은 달라도,<br>결과는 모두 카테고리 1위.</h2></div></div>
+      <ol class="rec">
+        <li><div><span class="yr">헤어 · 두피 · 2024–25</span><h3>신설 법인의 첫 홈쇼핑</h3></div><p>홈쇼핑 경험이 없던 신설 법인. 방송 전에 카테고리 · 컨셉 · 제품명 · 가격을 확정했습니다. <b>10개월 260억 원, 45차수 완판, 브랜드 누적 370억 원.</b></p></li>
+        <li><div><span class="yr">마스크 · 팩 · 2025</span><h3>침체된 카테고리</h3></div><p>판매가 줄던 카테고리를 '맑은 피부' 컨셉으로 다시 설계했습니다. <b>그해 카테고리 1위</b>, 홈쇼핑사가 먼저 라인 확장을 제안했습니다.</p></li>
+        <li><div><span class="yr">스킨케어 · 2026</span><h3>여러 번 고전한 브랜드</h3></div><p>기미 카테고리로 옮기고 고가 앰플로 다시 설계했습니다. CJ온스타일 단독 방송. <b>5개월 139억 원, 13회 연속 매진.</b></p></li>
+        <li><div><span class="yr">베이스 메이크업 · 2026</span><h3>후속 제품</h3></div><p>성공한 앰플의 컨셉을 BB크림으로 넓혔습니다. <b>전 방송 매진.</b></p></li>
+      </ol>
+      <p class="note">브랜드명은 오프라인 미팅에서 공개합니다. 신상품 성공률 75% (업계 평균 20%).</p>
+    </div>
+  </section>
+
+  <section class="sec dk" id="work--usa">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">미국 진출</span><h2 class="h2">2017년부터 미국에서 해 온 일.</h2></div><a class="btn w" href="#usa-work">미국 진출 실적 전체</a></div>
+      <ol class="rec">
+        <li><div><h3>판매처</h3></div><p><b>아마존 · 타겟</b> 운영, <b>노드스트롬 · 메이시스 · 얼타 · JCPenney</b> 캠페인</p></li>
+        <li><div><h3>현장</h3></div><p><b>뷰티콘 · 코스모프로프</b> 부스, 베벌리힐스 페닌슐라 호텔 뷰티클래스</p></li>
+        <li><div><h3>캠페인</h3></div><p><b>K-사우나 박스</b> · 한국 브랜드 열 곳 이상의 제품을 한 상자에</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="work--brand">
+    <div class="wrap split">
+      <div><span class="lab">브랜딩</span><h2 class="h2">항공사와 대기업의<br>디자인을 맡아 왔습니다.</h2><p class="lead">브랜드 아이덴티티를 다시 그리고, 기념 엠블럼과 보딩패스를 만들고, 90권 넘는 간행물을 펴냈습니다.</p></div>
+      <div class="slot r43">이미지 · 디자인 작업물 (4:3)</div>
+    </div>
+    <div class="wrap" style="margin-top:56px"><ul class="facts3">
+      <li><b>아이덴티티</b><span>진에어 디자인 리뉴얼 · 삼성전자 캐릭터 디자인</span></li>
+      <li><b>기념 작업</b><span>대한항공 50주년 엠블럼 · 평창 올림픽 기념 보딩패스</span></li>
+      <li><b>출판</b><span>매거진 · 브로셔 · 단행본 90권 이상</span></li>
+    </ul></div>
+  </section>
+
+  <section class="sec bg" id="work--retail">
+    <div class="wrap split rev">
+      <div><span class="lab">유통</span><h2 class="h2">면세점과 백화점,<br>입점부터 판매까지.</h2><p class="lead">프리미엄 유통 채널에서 10년 넘게 입점과 운영을 맡아 왔습니다. 해외 브랜드를 한국에 처음 들여와 자리 잡게 한 경험도 있습니다.</p></div>
+      <div class="slot r43">이미지 · 면세점 · 백화점 매장 (4:3)</div>
+    </div>
+    <div class="wrap" style="margin-top:56px"><ul class="facts3">
+      <li><b>면세점</b><span>롯데 · 신세계 · 신라 · 현대 · 공항 면세점 입점과 운영</span></li>
+      <li><b>오프라인</b><span>백화점 · 프리미엄 편집숍 · 팝업</span></li>
+      <li><b>국내 론칭</b><span>펜할리곤스 (영국 향수) · 야만 (일본 뷰티 기기)</span></li>
+    </ul></div>
+  </section>
+</div>
+
+<!-- ===================================================== USA · 소개 -->
+<div class="page" data-page="usa" data-title="미국 진출 | 드에프">
+  <nav class="subnav" aria-label="미국 진출 메뉴"><div class="wrap"><b>미국 진출</b><a href="#usa" data-sub="usa">소개</a><a href="#usa-services" data-sub="usa-services">서비스</a><a href="#usa-team" data-sub="usa-team">걸어온 길</a><a href="#usa-work" data-sub="usa-work">실적</a><a href="#creators" data-sub="creators">크리에이터</a><a href="#creator-join" data-sub="creator-join">For Creators</a><a href="#contact" class="go">문의하기</a></div></nav>
+  <section class="ph"><div class="wrap"><span class="lab">사업 02 · 미국 진출 · 카테고리 제한 없음</span><p class="slogan">From Korea<br>to the USA<span class="dot">.</span></p><p>좋은 브랜드가 더 넓은 시장에서 선택받도록. K-뷰티, K-푸드, 라이프스타일 브랜드의 브랜딩과 크리에이터 콘텐츠, 국내외 유통을 연결합니다.</p>
+    <div class="btns" style="margin-top:32px"><a class="btn k" href="#contact">미국 진출 문의하기</a></div></div></section>
+
+  <section class="sec" id="usa--mission">
+    <div class="wrap split">
+      <div><span class="lab">미션</span><h2 class="h2">한국의 좋은 브랜드가<br>세계에서 마땅한 사랑을 받도록.</h2></div>
+      <div><p class="lead" style="margin-top:0">좋은 브랜드에는 좋은 이유가 있습니다. 드에프는 그 이유가 세계에 닿도록 돕습니다. 스토리, 디자인, 유통, 마케팅, 전환까지 브랜드에 필요한 일을 하나의 경험으로 묶습니다.</p><p class="lead">지금 필요한 일부터 다음 시장으로 나아가는 과정까지 함께합니다.</p></div>
+    </div>
+  </section>
+
+  <section class="sec dk" id="usa--market">
+    <div class="wrap split">
+      <div><span class="lab">2025년 한국 화장품 수출 · 역대 최대 · 세계 2위</span><p class="big-n">$11.4B</p></div>
+      <div><h2 class="h2" style="font-size:clamp(24px,2.6vw,34px)">그리고 처음으로, 미국이 한국 화장품의 1위 수출국이 됐습니다.</h2><p class="lead">세계가 한국의 아름다움을 찾고 있고, 그중 가장 큰 시장이 미국입니다. 문이 열려 있는 시간은 생각보다 짧습니다. 먼저 건너간 브랜드가 그 시장의 기준이 됩니다.</p><p class="note">출처: 식품의약품안전처 2025년 화장품 생산 · 수출 통계 (2026 발표)</p></div>
+    </div>
+  </section>
+
+  <section class="sec dk" id="usa--shift" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">파트너의 기준</span><h2 class="h2">한국 브랜드가 세계로 가는 지금,<br>파트너의 기준이 바뀌고 있습니다.</h2><p class="lead">캠페인 한 번 대행하고 끝나는 방식으로는 부족합니다. 이제 브랜드가 묻는 것은 세 가지입니다.</p></div></div>
+      <ol class="q3">
+        <li><span class="n">질문 하나</span><h3>관계</h3><p>한 번으로 끝나지 않을 파트너인가.</p></li>
+        <li><span class="n">질문 둘</span><h3>성과</h3><p>무엇이 움직였는지 숫자로 보여주는가.</p></li>
+        <li><span class="n">질문 셋</span><h3>신뢰</h3><p>일이 어긋났을 때 무엇을 하는가.</p></li>
+      </ol>
+      <p class="lead" style="margin-top:36px;color:#fff;font-weight:700">드에프의 미국 진출 사업은 이 세 질문에 답하도록 짜여 있습니다.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="usa--five">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">하는 일</span><h2 class="h2">필요한 일이 한 곳에 다 있습니다.</h2></div><a class="more" href="#usa-services">서비스 전체</a></div>
+      <ol class="five">
+        <li><span class="n">01 · 스토리</span><h3>스토리를 만듭니다</h3><p>브랜드 스토리 · 메시지, 브랜드 포지셔닝, 출판 · 간행물</p></li>
+        <li><span class="n">02 · 디자인</span><h3>디자인을 입힙니다</h3><p>CI · BI 아이덴티티, 패키지 · 지면 디자인, 숏폼 · UGC 콘텐츠</p></li>
+        <li><span class="n">03 · 유통</span><h3>제품에 날개를 답니다</h3><p>면세점 · 백화점 입점, 프리미엄 편집숍, 이커머스 · 자사몰</p></li>
+        <li><span class="n">04 · 마케팅</span><h3>세상에 닿게 합니다</h3><p>인플루언서 캠페인, SNS 운영 · 시딩, 미국 진출 전략 · PR</p></li>
+        <li><span class="n">05 · 전환</span><h3>매출로 잇습니다</h3><p>아마존 마켓플레이스, 팝업 이벤트, 성과 리포트</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec bg">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">무엇으로 오셨나요</span><h2 class="h2">지금 고민하는 한 가지부터<br>들려주세요.</h2></div></div>
+      <div class="doors">
+        <article class="door"><span class="k">브랜드라면</span><h3>다음 성장을 함께 설계합니다.</h3><p>브랜드를 새로 정비하고 싶을 때, 콘텐츠를 꾸준히 만들고 싶을 때, 해외 시장으로 넓히고 싶을 때. 지금 상황에 맞는 실행 방법을 함께 찾습니다.</p><a class="btn k" href="#contact">프로젝트 상담하기</a></article>
+        <article class="door"><span class="k">처음 오셨나요</span><h3>서비스를 미리 고르지 않으셔도 됩니다.</h3><p>브랜드의 지금 상황과 목표를 남겨 주시면, 어떤 일부터 시작할지 함께 정리하겠습니다.</p><a class="btn o" href="#contact">무엇이든 문의하기</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="doors d3">
+        <article class="door"><span class="k">걸어온 길</span><h3>2008년부터 쌓아 온 경험.</h3><p>연혁, 해외 브랜드를 한국에 들여온 이야기, 베벌리힐스 사례를 볼 수 있습니다.</p><a class="btn o" href="#usa-team">걸어온 길 보기</a></article>
+        <article class="door"><span class="k">크리에이터라면</span><h3>Your voice, unchanged.</h3><p>드에프와 함께할 크리에이터를 찾습니다. 팔로워 수 기준도, 독점 계약도 없습니다.</p><a class="btn o" href="#creator-join">For Creators</a></article>
+        <article class="door"><span class="k">홈쇼핑도 함께</span><h3>뷰티 브랜드라면, 홈쇼핑도 함께.</h3><p>3년 연속 카테고리 1위를 만든 홈쇼핑 사업을 같이 진행할 수 있습니다.</p><a class="btn o" href="#homeshopping">홈쇼핑 사업 보기</a></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================================================== USA · 걸어온 길 -->
+<div class="page" data-page="usa-team" data-title="미국 진출 · 걸어온 길 | 드에프">
+  <nav class="subnav" aria-label="미국 진출 메뉴"><div class="wrap"><b>미국 진출</b><a href="#usa" data-sub="usa">소개</a><a href="#usa-services" data-sub="usa-services">서비스</a><a href="#usa-team" data-sub="usa-team">걸어온 길</a><a href="#usa-work" data-sub="usa-work">실적</a><a href="#creators" data-sub="creators">크리에이터</a><a href="#creator-join" data-sub="creator-join">For Creators</a><a href="#contact" class="go">문의하기</a></div></nav>
+  <section class="ph"><div class="wrap"><span class="lab">미국 진출 · 걸어온 길</span><h1>18년 동안 쌓은 경험으로<br>한 팀처럼 움직입니다.</h1><p>출판에서 시작해 디자인, 유통, 미국 현장까지. 드에프 미국 진출 사업을 실행하는 팀이 해 온 일입니다.</p>
+    <div class="jump"><a href="#usa-team--history">연혁</a><a href="#usa-team--reverse">우리가 믿는 근거</a><a href="#usa-team--field">베벌리힐스 사례</a><a href="#usa-team--culture">문화 경험</a></div></div></section>
+  <section class="sec bg" id="usa-team--history">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">미국 진출 팀이 걸어온 길</span><h2 class="h2">2008년부터 지금까지.</h2><p class="lead">2008년 출판으로 시작해 디자인, 유통, 글로벌 마케팅을 한 팀 안에서 함께 키워 왔습니다. 세 부문이 하나의 프로젝트를 같이 보고 각자의 전문성을 연결합니다.</p></div></div>
+      <ol class="hist">
+        <li><b>2008</b><span>출판사 설립 <em>— 브랜드의 스토리를 만드는 일에서 시작</em></span></li>
+        <li><b>2010</b><span>디자인 · 브랜딩 에이전시 <em>— 스토리에 디자인을 입히다</em></span></li>
+        <li><b>2015</b><span>유통 확장 (클로이 에비뉴 합병) <em>— 만든 것을 팔리는 곳으로</em></span></li>
+        <li><b>2017</b><span>미국 진출 · 현지 법인 설립 <em>— 무대를 세계로</em></span></li>
+        <li><b>2022</b><span>아마존 · 미국 오프라인 캠페인 <em>— 실행 경험을 쌓다</em></span></li>
+        <li class="now"><b>2026</b><span>MCN 시작 <em>— 18년의 경험을 크리에이터와 잇다</em></span></li>
+      </ol>
+      <p class="note">드에프 미국 진출 사업을 실행하는 팀의 이력입니다.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="usa-team--reverse">
+    <div class="wrap split">
+      <div><span class="lab">우리가 믿는 근거</span><h2 class="h2">이 길을 반대 방향에서<br>먼저 걸었습니다.</h2><p class="lead">런던의 향수 펜할리곤스, 일본의 뷰티 기기 야만. 이 해외 브랜드들을 한국 시장에 처음 소개하고 자리 잡게 했습니다. 낯선 시장의 문을 열고, 유통을 뚫고, 소비자의 말로 옮기는 일을 이미 해 봤습니다. 지금은 같은 길을 한국 브랜드를 위해 거꾸로 엽니다.</p></div>
+      <div class="slot r43">이미지 · 해외 브랜드 국내 론칭 현장 (4:3)</div>
+    </div>
+  </section>
+
+  <section class="sec bg" id="usa-team--field">
+    <div class="wrap split">
+      <div class="slot r43">이미지 · 베벌리힐스 뷰티클래스 · 박람회 부스 (4:3)</div>
+      <div><span class="lab">현장 · 사례</span><h2 class="h2">베벌리힐스에서<br>K-뷰티의 공간을 열었습니다.</h2><p class="lead">미국 소비자에게 낯선 K-뷰티 브랜드를 알리는 것이 과제였습니다. 광고를 사는 대신 사람을 초대했습니다. 현지 법인으로 인플루언서 커뮤니티를 만들고, 브랜드에 필요한 크리에이터와 매거진, 바이어에게 초대장을 보냈습니다.</p><p class="lead">베벌리힐스 페닌슐라 호텔 뷰티클래스와 뷰티콘 · 코스모프로프 부스에서 초대받은 사람들이 직접 써 봤고, 그 경험이 온라인 입소문과 비즈니스로 이어졌습니다. 이때 쌓인 네트워크가 지금 드에프 크리에이터 사업의 뿌리입니다.</p></div>
+    </div>
+    <div class="wrap"><p class="note" style="margin-top:36px">뷰티콘은 방문객 4만 3천 명, SNS 도달 22억에 이르는 미국 최대 뷰티 행사입니다 (뷰티콘 공식 소개 기준. 행사 전체 규모이며 드에프 단독 성과가 아닙니다).</p></div>
+  </section>
+
+  <section class="sec" id="usa-team--culture">
+    <div class="wrap split rev">
+      <div><span class="lab">문화 경험</span><h2 class="h2">마케팅을 넘어,<br>문화로 기억되게.</h2><p class="lead">전통 한옥에서 팝업과 문화 행사를 여러 차례 기획하고 운영했습니다. K-뷰티 체험, 전통 문화 프로그램, 해외 VIP와 바이어 초청까지 진행했습니다. 제품보다 문화로 기억되는 브랜드를 만듭니다.</p></div>
+      <div class="slot r43">이미지 · 한옥 팝업 (4:3)</div>
+    </div>
+  </section>
+
+  <section class="sec dk"><div class="wrap cta"><div><h2>다음 장은,<br>30분이면 시작됩니다.</h2><p>첫 미팅 30분 동안 브랜드의 지금과 목표를 듣습니다.</p></div><a class="btn w" href="#contact">프로젝트 문의하기</a></div></section>
+</div>
+
+<!-- ===================================================== USA · 서비스 -->
+<div class="page" data-page="usa-services" data-title="미국 진출 서비스 | 드에프">
+  <nav class="subnav" aria-label="미국 진출 메뉴"><div class="wrap"><b>미국 진출</b><a href="#usa" data-sub="usa">소개</a><a href="#usa-services" data-sub="usa-services">서비스</a><a href="#usa-team" data-sub="usa-team">걸어온 길</a><a href="#usa-work" data-sub="usa-work">실적</a><a href="#creators" data-sub="creators">크리에이터</a><a href="#creator-join" data-sub="creator-join">For Creators</a><a href="#contact" class="go">문의하기</a></div></nav>
+  <section class="ph"><div class="wrap"><span class="lab">미국 진출 · 서비스</span><h1>브랜드의 다음 단계에<br>필요한 일을 함께 합니다.</h1><p>브랜드 하나를 통째로 맡기셔도 되고, 필요한 것만 고르셔도 됩니다. 제목을 누르면 무엇을 맡는지 볼 수 있습니다.</p></div></section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="svc">
+        <details open><summary><span class="n">01</span><h3>전체 브랜드 컨설팅</h3><span class="one">브랜드 전체를 보고 다음 한 걸음을 정합니다.</span><span class="pm">+</span></summary><div class="body"><p>브랜드 전반을 함께 보고 무엇부터 손댈지 순서를 잡습니다. 어느 시장의 누구에게 갈지 정하고, 스토리 · 디자인 · 유통 · 마케팅 · 전환 가운데 지금 필요한 것을 골라 붙입니다. 캠페인 한 건으로 끝내지 않고, 시장에서 브랜드의 점유율을 넓히는 데까지 목표를 두고 함께 갑니다.</p></div></details>
+        <details><summary><span class="n">02</span><h3>브랜딩</h3><span class="one">브랜드의 이야기를 하나의 아이덴티티로.</span><span class="pm">+</span></summary><div class="body"><p>브랜드 스토리와 CI · BI부터 패키지 · 제품 디자인까지, 브랜드가 세상에 보이는 모든 접점을 설계합니다. 진에어 CI · BI 리뉴얼, 대한항공 기념 프로젝트를 진행한 디자인팀이 맡습니다.</p><div class="tags"><span>브랜드 스토리</span><span>CI · BI</span><span>제품 디자인</span></div></div></details>
+        <details><summary><span class="n">03</span><h3>쇼핑몰 제작 · 운영</h3><span class="one">브랜드의 온라인 공간을 만들고 운영까지 함께합니다.</span><span class="pm">+</span></summary><div class="body"><p>브랜드 사이트, 자사몰, 랜딩페이지, 팝업 사이트를 목적에 맞게 기획하고 만듭니다. 직접 제작, Shopify, Amazon 중 브랜드의 규모와 목표에 맞는 방식을 함께 정하고, 만든 뒤의 운영과 개선까지 이어갑니다.</p><div class="tags"><span>브랜드 사이트</span><span>자사몰</span><span>랜딩페이지</span><span>팝업 사이트</span></div></div></details>
+        <details><summary><span class="n">04</span><h3>인플루언서 마케팅</h3><span class="one">캠페인 하나를 기획부터 발행까지.</span><span class="pm">+</span></summary><div class="body"><p>캠페인 목표와 브랜드에 맞춰 기획, 크리에이터 섭외, 콘텐츠 제작과 검수, 발행까지 전 과정을 함께합니다. 검증된 크리에이터 풀에서 브랜드의 타깃과 톤에 맞는 크리에이터를 골라 제안합니다.</p></div></details>
+        <details><summary><span class="n">05</span><h3>캠페인 월 구독 패키지</h3><span class="one">한 번의 캠페인보다, 쌓이는 자산으로.</span><span class="pm">+</span></summary><div class="body"><p>브랜드에 맞는 크리에이터 인원과 월 콘텐츠 발행량을 정해 꾸준히 캠페인을 운영합니다. 브랜드를 이해하는 크리에이터와 콘텐츠를 계속 쌓아 장기적인 브랜드 자산을 만듭니다.</p></div></details>
+        <details><summary><span class="n">06</span><h3>SNS 운영 대행</h3><span class="one">계정 하나를 한 팀이 맡습니다.</span><span class="pm">+</span></summary><div class="body"><p>인스타그램 · 틱톡 · 유튜브 계정을 맡아 꾸준히 운영합니다. 콘텐츠 제작부터 댓글 · DM 응대까지 한 팀이 합니다.</p><div class="tags"><span>인스타그램</span><span>틱톡</span><span>유튜브</span><span>기타</span></div></div></details>
+        <details><summary><span class="n">07</span><h3>팝업스토어</h3><span class="one">보여주기에서 끝나지 않는 팝업.</span><span class="pm">+</span></summary><div class="body"><p>미국, 한국, 그 밖의 지역에서 팝업을 기획하고 엽니다. 브랜드와 맞는 인플루언서와 바이어를 초대해 판매로 잇습니다.</p><div class="tags"><span>미국</span><span>한국</span><span>기타 지역</span></div></div></details>
+        <details><summary><span class="n">08</span><h3>해외 매장 입점</h3><span class="one">해외 매대에 오르기까지 함께 준비합니다.</span><span class="pm">+</span></summary><div class="body"><p>미국 현지 온 · 오프라인 채널, 슬로우레시피 같은 해외 타깃 유통 채널, 글로벌 마켓플레이스 입점까지 해외 진출에 필요한 과정을 함께 준비합니다. 면세점과 백화점 유통을 10년 넘게 해 온 팀이 채널별 입점 전략, 유통 구조 설계, 바이어 소통을 맡습니다.</p><div class="tags"><span>미국 백화점</span><span>타겟</span><span>아마존</span><span>슬로우레시피</span><span>기타</span></div></div></details>
+      </div>
+      <p class="note">어느 것을 맡길지 아직 정하지 않으셨어도 괜찮습니다. 문의부터 주시면 함께 정리하겠습니다.</p>
+      <div class="btns" style="margin-top:28px"><a class="btn k" href="#contact">프로젝트 문의하기</a></div>
+    </div>
+  </section>
+
+  <section class="sec bg" id="usa-services--start">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">시작점</span><h2 class="h2">어디서부터 시작할지<br>함께 정합니다.</h2></div></div>
+      <div class="starts s3">
+        <article class="st"><span class="k">브랜드 정비</span><h3>좋은 제품인데 소개와 디자인이 일관되지 않습니다</h3><span class="arr">↓</span><p>포지셔닝 · 핵심 메시지 · 비주얼 가이드 · 주요 판매 접점 개선안</p></article>
+        <article class="st"><span class="k">크리에이터 콘텐츠</span><h3>단발 협업이라 콘텐츠와 반응이 쌓이지 않습니다</h3><span class="arr">↓</span><p>크리에이터 제안 · 콘텐츠 기획 · 제작 · 발행 일정 · 성과 정리</p></article>
+        <article class="st"><span class="k">미국 시장 진출</span><h3>어떤 채널과 메시지부터 시작할지 모릅니다</h3><span class="arr">↓</span><p>시장 · 채널 검토 · 현지 콘텐츠 방향 · 유통 준비 · 실행 계획</p></article>
+      </div>
+      <p class="note">제안 산출물은 운영 상황을 확인한 뒤 확정합니다.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="usa-services--faq">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">자주 묻는 것</span><h2 class="h2">궁금하신 것들.</h2></div></div>
+      <div class="faq">
+        <details><summary>서비스 하나만 맡길 수 있나요?</summary><p>필요한 서비스부터 의뢰하실 수 있습니다. 목표와 지금 운영 상황을 확인한 뒤 범위를 정합니다.</p></details>
+        <details><summary>비용은 어떻게 정하나요?</summary><p>제작물 수, 크리에이터 구성, 운영 기간, 콘텐츠 활용 범위에 따라 달라집니다. 상담 후 포함 업무와 별도 비용을 나눠 안내합니다.</p></details>
+        <details><summary>이미 운영 중인 채널이 있어도 가능한가요?</summary><p>지금 채널과 운영 방식을 먼저 확인하고, 필요한 부분의 협업 범위를 정합니다.</p></details>
+        <details><summary>성과는 어떻게 확인하나요?</summary><p>캠페인 시작 전에 확인할 지표와 보고 주기를 합의합니다. 도달 · 참여 · 전환은 나눠서 설명합니다.</p></details>
+        <details><summary>콘텐츠를 광고에 다시 쓸 수 있나요?</summary><p>사용 매체 · 기간 · 지역 등 활용 조건을 프로젝트별로 협의합니다.</p></details>
+        <details><summary>뷰티가 아닌 브랜드도 되나요?</summary><p>네. 미국 진출 사업은 카테고리 제한이 없습니다. K-푸드, 라이프스타일 브랜드와도 일합니다.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dk"><div class="wrap cta"><div><h2>다음 장은,<br>30분이면 시작됩니다.</h2><p>첫 미팅 30분 동안 브랜드의 지금과 목표를 듣습니다.</p></div><a class="btn w" href="#contact">프로젝트 문의하기</a></div></section>
+</div>
+
+<!-- ===================================================== USA · 실적 -->
+<div class="page" data-page="usa-work" data-title="미국 진출 실적 | 드에프">
+  <nav class="subnav" aria-label="미국 진출 메뉴"><div class="wrap"><b>미국 진출</b><a href="#usa" data-sub="usa">소개</a><a href="#usa-services" data-sub="usa-services">서비스</a><a href="#usa-team" data-sub="usa-team">걸어온 길</a><a href="#usa-work" data-sub="usa-work">실적</a><a href="#creators" data-sub="creators">크리에이터</a><a href="#creator-join" data-sub="creator-join">For Creators</a><a href="#contact" class="go">문의하기</a></div></nav>
+  <section class="ph"><div class="wrap"><span class="lab">미국 진출 · 실적</span><h1>한국 대표 기업들과<br>값진 경험을 쌓아 왔습니다.</h1><p>스토리, 디자인, 유통, 마케팅, 전환. 다섯 가지를 한 팀 안에서 해 왔습니다.</p>
+    <div class="jump"><a href="#usa-work--record">함께한 기업</a><a href="#usa-work--design">스토리 · 디자인</a><a href="#usa-work--retail">유통</a><a href="#usa-work--global">글로벌 마케팅</a><a href="#usa-work--mcn">MCN</a><a href="#usa-work--campaign">캠페인</a></div></div></section>
+
+  <section class="sec" id="usa-work--record">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">함께한 기업</span><h2 class="h2">한국 대표 기업들이<br>함께했습니다.</h2></div></div>
+      <ol class="rec">
+        <li><div><span class="yr">2008년부터</span><h3>브랜드를 만들다</h3></div><p><b>진에어</b> 디자인 리뉴얼부터 기내지 발간까지 · <b>대한항공</b> 50주년 엠블럼, 평창 올림픽 기념 보딩패스 · <b>삼성전자</b> 캐릭터 · 콘텐츠 디자인</p></li>
+        <li><div><span class="yr">2015년 유통 확장부터</span><h3>팔리게 하다</h3></div><p><b>롯데면세점</b> 메인 모델 에이전시 · 입점 운영 · <b>신세계면세점 · 갤러리아백화점</b> 프리미엄 유통 운영 · <b>펜할리곤스 · 야만</b> 한국 첫 도입과 정착</p></li>
+        <li><div><span class="yr">2017년 미국 진출부터</span><h3>세계로 잇다</h3></div><p><b>한애가 · 107 · 발효미학 · 소서 · 슬로우레시피</b> 창업기부터 함께한 브랜드들 · <b>미국 인플루언서 130명</b> 파트너십</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec bg" id="usa-work--design">
+    <div class="wrap split">
+      <div><span class="lab">스토리 · 디자인</span><h2 class="h2">스토리에 디자인을 얹으면<br>브랜딩이 됩니다.</h2><p class="lead">브랜드 아이덴티티를 처음부터 다시 그리고, 올림픽 기념 보딩패스를 만들고, 90권이 넘는 간행물을 펴냈습니다. 디자인은 이 팀의 출발점입니다.</p></div>
+      <div class="slot r43">이미지 · 디자인 작업물 (4:3)</div>
+    </div>
+    <div class="wrap" style="margin-top:56px"><ul class="facts3">
+      <li><b>아이덴티티</b><span>진에어 디자인 리뉴얼 · UHIC · 한애가 · 107 CI</span></li>
+      <li><b>기념 작업</b><span>대한항공 50주년 엠블럼 · 평창 올림픽 기념 보딩패스</span></li>
+      <li><b>출판</b><span>매거진 · 브로셔 · 단행본 90권 이상</span></li>
+    </ul></div>
+  </section>
+
+  <section class="sec" id="usa-work--retail">
+    <div class="wrap split rev">
+      <div><span class="lab">유통</span><h2 class="h2">입점과 판매까지<br>한 팀이 함께합니다.</h2><p class="lead">면세점과 백화점, 온라인까지. 프리미엄 유통 채널에서 10년 넘게 브랜드의 입점과 운영을 맡아 왔습니다. 인지도를 만드는 데서 끝내지 않고, 매대에 오르고 판매되는 데까지 책임집니다.</p></div>
+      <div class="slot r43">이미지 · 면세점 · 백화점 매장 (4:3)</div>
+    </div>
+    <div class="wrap" style="margin-top:56px"><ul class="facts3">
+      <li><b>면세</b><span>롯데 · 신세계 · 신라 · 현대 · 공항 면세점 입점 · 운영</span></li>
+      <li><b>오프라인</b><span>백화점 · 프리미엄 편집숍 · 팝업</span></li>
+      <li><b>온라인</b><span>이커머스 · 자사몰 연계</span></li>
+    </ul></div>
+  </section>
+
+  <section class="sec dk" id="usa-work--global">
+    <div class="wrap split">
+      <div><span class="lab">글로벌 마케팅</span><h2 class="h2">2017년부터<br>미국 현장에서 뛰었습니다.</h2><p class="lead">미국에 법인을 세우고, 인플루언서 커뮤니티를 만들고, 박람회 부스에서 소비자를 직접 만나며 쌓은 현장 감각입니다.</p></div>
+      <div class="slot r43">이미지 · 미국 박람회 · 행사 (4:3)</div>
+    </div>
+    <div class="wrap" style="margin-top:56px"><ol class="rec">
+      <li><div><h3>거점</h3></div><p>미국 현지 법인 (2017 설립) · 인플루언서 커뮤니티 운영</p></li>
+      <li><div><h3>실행</h3></div><p><b>아마존 · 타겟</b> 운영 · <b>노드스트롬 · 메이시스</b> 백화점 · <b>얼타 · JCPenney</b> · SNS · 인플루언서 캠페인 · PR</p></li>
+      <li><div><h3>현장</h3></div><p><b>뷰티콘 · 코스모프로프</b> 부스 · 미디어 데스크사이드 · 팝업 · 브랜드 행사</p></li>
+    </ol></div>
+  </section>
+
+  <section class="sec" id="usa-work--mcn">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">MCN · 2026</span><h2 class="h2">캠페인마다 새로 섭외하지 않습니다.</h2><p class="lead">필요할 때마다 낯선 크리에이터를 찾아 섭외하면 검증과 관계가 빠집니다. 드에프는 검증을 거친 크리에이터 풀과 함께합니다. 같은 사람들이 브랜드를 이어서 맡아 톤이 흔들리지 않고, 관계가 쌓일수록 콘텐츠가 자연스러워집니다.</p></div><a class="more" href="#creators">크리에이터</a></div>
+      <ol class="trio">
+        <li><h3>검증</h3><p>팬층 · 참여 · 이력을 확인한 크리에이터만 풀에 들어옵니다.</p></li>
+        <li><h3>관계</h3><p>한 번 거래로 끝내지 않고 브랜드를 이어서 맡습니다.</p></li>
+        <li><h3>신선도</h3><p>분기마다 풀을 평가하고 다시 구성합니다.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec bg" id="usa-work--campaign">
+    <div class="wrap split">
+      <div class="slot r16">이미지 · K-사우나 박스 캠페인 (16:9)</div>
+      <div><span class="lab">캠페인 · 슬로우레시피</span><h2 class="h2">K-사우나를 상자 하나에 담아<br>세계로 보냈습니다.</h2><p class="lead">슬로우레시피와 함께 만든 캠페인입니다. 한국의 사우나 문화를 집에서 따라 할 수 있는 루틴으로 풀고, 열 곳이 넘는 한국 브랜드의 제품을 한 상자에 담아 전 세계로 배송했습니다. 크리에이터가 직접 써 보고 설명하는 영상이 그 상자를 팔았습니다.</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">일하는 방식</span><h2 class="h2">캠페인이 끝나도<br>남는 것이 있게 합니다.</h2><p class="lead">감보다 기록을 보고 정합니다.</p></div></div>
+      <ul class="creed">
+        <li><h3>쌓이는 것</h3><p>브랜드를 이해하는 크리에이터들이 매달 콘텐츠를 만들고, 도달 · 참여 · 전환과 현지 소비자 반응을 캠페인마다 정리합니다. 다음 캠페인은 그 기록을 보고 정합니다.</p></li>
+        <li><h3>남는 것</h3><p>캠페인 콘텐츠는 한 번 쓰고 버리지 않습니다. 광고 소재로 다시 쓸 수 있는 활용권을 통해 브랜드의 장기 자산이 되고, 인지도는 현지 유통으로 이어집니다.</p></li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- ===================================================== CREATORS (MCN) -->
+<div class="page" data-page="creators" data-title="크리에이터 | 드에프">
+  <nav class="subnav" aria-label="미국 진출 메뉴"><div class="wrap"><b>미국 진출</b><a href="#usa" data-sub="usa">소개</a><a href="#usa-services" data-sub="usa-services">서비스</a><a href="#usa-team" data-sub="usa-team">걸어온 길</a><a href="#usa-work" data-sub="usa-work">실적</a><a href="#creators" data-sub="creators">크리에이터</a><a href="#creator-join" data-sub="creator-join">For Creators</a><a href="#contact" class="go">문의하기</a></div></nav>
+  <section class="ph"><div class="wrap"><span class="lab">미국 진출 · 크리에이터</span><h1>같은 크리에이터가 꾸준히,<br>광고보다 일상처럼.</h1><p>리서치부터 제작, 크리에이터까지. 브랜드 콘텐츠를 처음부터 끝까지 만듭니다.</p>
+    <div class="jump"><a href="#creators--research">조사 우선</a><a href="#creators--seven">일곱 단계</a><a href="#creators--since">네트워크</a><a href="#creators--lead">리드 크리에이터</a><a href="#creators--pool">크리에이터 풀</a><a href="#creators--status">진행 현황</a></div></div></section>
+
+  <section class="sec" id="creators--research">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">조사 우선</span><h2 class="h2">캠페인보다 조사가 먼저입니다.</h2><p class="lead">무엇을 만들지 정하기 전에 시장부터 봅니다. 시장, 경쟁 브랜드, 채널을 분석하고 그 결과에 맞춰 콘텐츠를 만듭니다.</p></div></div>
+      <ol class="trio">
+        <li><h3>조사</h3><p>시장 · 경쟁 브랜드 · 채널에서 지금 반응이 오는 것을 찾습니다.</p></li>
+        <li><h3>분석</h3><p>자료를 깊이 분석해 영상의 방향을 정합니다.</p></li>
+        <li><h3>제작</h3><p>정한 방향대로 일곱 단계를 거쳐 만듭니다.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec dk" id="creators--seven">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">만드는 방식</span><h2 class="h2">영상 한 편, 일곱 단계를 거칩니다.</h2><p class="lead">크리에이터에게 맡기고 기다리지 않습니다. 제작 스튜디오에서 단계마다 직접 확인하며 만듭니다.</p></div></div>
+      <ol class="seven"><li><span class="n">01</span><b>준비</b></li><li><span class="n">02</span><b>스타일</b></li><li><span class="n">03</span><b>각본</b></li><li><span class="n">04</span><b>샘플 영상</b></li><li><span class="n">05</span><b>촬영본</b></li><li><span class="n">06</span><b>가편집</b></li><li><span class="n">07</span><b>승인</b></li></ol>
+      <p class="note" style="margin-top:28px">일곱 단계를 모두 통과해야 발행됩니다. 기준에 못 미치면 그 단계로 돌아가 다시 만듭니다. 채널: 인스타그램 · 틱톡 · 유튜브</p>
+    </div>
+  </section>
+
+  <section class="sec" id="creators--since">
+    <div class="wrap split">
+      <div><span class="lab">SINCE 2017</span><h2 class="h2">2017년부터 쌓아 온<br>네트워크입니다.</h2><p class="lead">2017년 미국 현지 법인을 세우고 인플루언서 커뮤니티를 만들었습니다. 베벌리힐스 뷰티클래스, 뷰티콘 · 코스모프로프 현장, 미국 인플루언서 130명과의 파트너십이 지금 크리에이터 사업의 뿌리입니다.</p></div>
+      <div class="slot r43">이미지 · 미국 크리에이터 행사 (4:3)</div>
+    </div>
+  </section>
+
+  <section class="sec bg" id="creators--lead">
+    <div class="wrap split">
+      <div class="slot r45" style="max-width:460px">인물 사진 · 유니언니 (4:5)</div>
+      <div><span class="lab">리드 크리에이터</span><h2 class="h2">1세대 크리에이터<br>유니언니</h2><p class="lead">메인 캠페인의 얼굴입니다. 드에프의 크리에이터 사업은 유니언니와 함께 시작했습니다. 유튜브 · 인스타그램 EuniUnni에서 10년 넘게 한국 뷰티를 영어로 소개해 왔습니다. LA에서 자랐고 한국에서 활동합니다.</p>
+        <div class="tags" style="margin-top:20px"><span>뷰티</span><span>메인 캠페인</span><span>브랜드 페이스</span></div>
+        <div class="btns" style="margin-top:28px;gap:24px"><a class="more" href="https://www.youtube.com/@EuniUnni" target="_blank" rel="noopener">YouTube · @EuniUnni</a><a class="more" href="https://www.instagram.com/euniunni/" target="_blank" rel="noopener">Instagram · @euniunni</a></div></div>
+    </div>
+  </section>
+
+  <section class="sec" id="creators--pool">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">크리에이터 풀</span><h2 class="h2">숫자보다, 오래 함께할<br>크리에이터를 찾습니다.</h2><p class="lead">같은 크리에이터가 브랜드를 이어서 맡아, 캠페인마다 톤을 다시 맞출 필요가 없습니다.</p></div></div>
+      <ol class="trio">
+        <li><h3>검증</h3><p>팬층 · 참여 · 이력을 확인한 크리에이터만 풀에 들어옵니다.</p></li>
+        <li><h3>관계</h3><p>한 번으로 끝내지 않고 브랜드를 계속 맡습니다.</p></li>
+        <li><h3>신선도</h3><p>분기마다 풀을 평가하고 다시 구성합니다.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec bg" id="creators--status">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">진행 현황</span><h2 class="h2">맡긴 뒤에는<br>단계마다 알려 드립니다.</h2><p class="lead">캠페인이 어느 단계에 있는지 담당자가 그때그때 알려 드립니다.</p></div></div>
+      <ol class="flow6">
+        <li><b>접수됨</b><span>접수 완료. 이 단계까지 내용을 고칠 수 있습니다.</span></li>
+        <li><b>기획 중</b><span>드에프가 캠페인을 기획합니다.</span></li>
+        <li><b>기획안 도착</b><span>목표와 실행 범위를 담은 기획안을 보내드립니다.</span></li>
+        <li><b>진행 확정</b><span>크리에이터와 일정을 확정합니다.</span></li>
+        <li><b>진행 중</b><span>일곱 단계 제작이 진행됩니다.</span></li>
+        <li><b>종료</b><span>발행 후 결과 리포트를 드립니다.</span></li>
+      </ol>
+      <div class="cta" style="margin-top:72px;padding-top:40px;border-top:1px solid var(--line)"><div><h2 style="font-size:clamp(26px,3vw,38px)">한 건으로 시작하셔도 되고,<br>매달 이어가셔도 됩니다.</h2><p style="color:var(--ink-2)">단건 캠페인도, 월 구독도 문의하기에서 바로 남기실 수 있습니다.</p></div><div class="btns"><a class="btn k" href="#contact">문의하기</a></div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================================================== FOR CREATORS -->
+<div class="page" data-page="creator-join" data-title="For Creators | DEF">
+  <nav class="subnav" aria-label="미국 진출 메뉴"><div class="wrap"><b>미국 진출</b><a href="#usa" data-sub="usa">소개</a><a href="#usa-services" data-sub="usa-services">서비스</a><a href="#usa-team" data-sub="usa-team">걸어온 길</a><a href="#usa-work" data-sub="usa-work">실적</a><a href="#creators" data-sub="creators">크리에이터</a><a href="#creator-join" data-sub="creator-join">For Creators</a><a href="#contact" class="go">문의하기</a></div></nav>
+  <section class="ph" lang="en"><div class="wrap"><span class="lab">FOR CREATORS</span><h1 class="enh">Your voice, unchanged.<br>Your opportunities, wider.</h1><p>Connect with brands that fit your style. DEF takes care of the business side (partnership proposals, terms, schedules and payments) so you can focus on your content.</p>
+    <div class="btns" style="margin-top:32px"><a class="btn k" href="#creator-apply">Apply</a><a class="btn o" href="#contact">Ask first</a></div></div></section>
+
+  <section class="sec" lang="en">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">HOW WE WORK</span><h2 class="h2">Good work starts with<br>understanding each other.</h2><p class="lead">We start by listening: what you create, and which brands you would like to work with. Then we set a direction together, based on your channel's voice and what you want from a partnership.</p></div></div>
+      <ul class="creed">
+        <li><h3>No exclusivity required.</h3><p>You can work with DEF and with others at the same time. We do not restrict that.</p></li>
+        <li><h3>Brand partnerships</h3><p>We look for partnerships that fit your content and your interests.</p></li>
+        <li><h3>Terms</h3><p>We set out scope, schedule, payment and usage terms clearly.</p></li>
+        <li><h3>Production support</h3><p>We organise the brand's requests and keep the conversation moving through production.</p></li>
+        <li><h3>Payment</h3><p>We follow the agreed terms and keep you posted on payment dates and progress.</p></li>
+        <li><h3>Ready when you are.</h3><p><a class="more" href="#creator-apply">Apply</a></p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec bg" lang="en">
+    <div class="wrap split">
+      <div class="slot r45" style="max-width:460px">Photo · EuniUnni (4:5)</div>
+      <div><span class="lab">WHO YOU WORK WITH</span><h2 class="h2">EuniUnni, a pioneering<br>K-beauty creator</h2><p class="lead">The face of our flagship campaigns. She has introduced Korean beauty for over ten years. She grew up in LA, lives in Korea, and runs her channels in English.</p>
+        <ul class="ticks"><li>We set a direction that fits your channel before you meet the brand.</li><li>We work through filming and editing problems with you.</li><li>We organize and pass on the brand's requests, and keep a record of what was discussed.</li></ul>
+        <div class="btns" style="margin-top:28px;gap:24px"><a class="more" href="https://www.youtube.com/@EuniUnni" target="_blank" rel="noopener">YouTube · @EuniUnni</a><a class="more" href="https://www.instagram.com/euniunni/" target="_blank" rel="noopener">Instagram · @euniunni</a></div></div>
+    </div>
+  </section>
+
+  <section class="sec" lang="en">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">HOW TO APPLY</span><h2 class="h2">Here is how the process works.</h2></div></div>
+      <ol class="flow6 f4">
+        <li><b>01</b><span>Application received</span></li>
+        <li><b>02</b><span>Channel review and a conversation</span></li>
+        <li><b>03</b><span>Terms shared</span></li>
+        <li><b>04</b><span>Contract and project proposals</span></li>
+      </ol>
+      <ol class="days" style="margin-top:56px">
+        <li><b>DAY 0</b><h4>Apply and meet</h4><p>Once you send your application, we have a 30-minute conversation.</p></li>
+        <li><b>DAY 7</b><h4>Channel review and terms</h4><p>We review your channels and content, then put terms in writing.</p></li>
+        <li><b>DAY 14</b><h4>Contract</h4><p>We read it together, line by line, and sign.</p></li>
+        <li><b>DAY 21</b><h4>First campaign proposal</h4><p>We bring you campaigns that fit your channel and audience.</p></li>
+        <li><b>DAY 30</b><h4>Publish and get paid</h4><p>Your first content goes live, and the first payment follows under the agreed terms.</p></li>
+      </ol>
+      <p class="note">This is one example. The actual timeline can change depending on the channel review and the projects in hand. We confirm the first campaign and payment dates once the terms are agreed.</p>
+    </div>
+  </section>
+
+  <section class="sec bg" lang="en">
+    <div class="wrap">
+      <div class="head"><div><span class="lab">FAQ</span><h2 class="h2">Questions we hear a lot</h2></div></div>
+      <div class="faq">
+        <details><summary>Can I apply with a small following?</summary><p>There is no minimum follower count. We look at your channel's voice, how consistently you post, and how well you know your field.</p></details>
+        <details><summary>Do I have to sign exclusively?</summary><p>No. DEF does not require exclusivity. You can work with DEF and with others at the same time.</p></details>
+        <details><summary>Can I turn down an offer?</summary><p>Yes. If it is not a fit for you, just tell us so.</p></details>
+        <details><summary>How are fees and payment dates decided?</summary><p>We put how it is calculated, what is deducted and when it is paid in writing before you sign.</p></details>
+        <details><summary>Can I keep my existing brand partnerships?</summary><p>Yes. Because DEF does not require exclusivity, you do not have to end anything you already have.</p></details>
+        <details><summary>How far can my content be used?</summary><p>Paid usage, re-edits, duration, territory and likeness are agreed for each project in advance. Nothing is used beyond what was agreed.</p></details>
+        <details><summary>How does a partnership end?</summary><p>The term and how to end it are written into the contract. If work is in progress when it ends, we agree together how to finish it.</p></details>
+        <details><summary>Can I apply from outside Korea?</summary><p>Yes. We will confirm which regions and languages we can work in, and how payments are handled.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="creator-join--apply" lang="en">
+    <div class="wrap ct">
+      <div><span class="lab">APPLY</span><h2 class="h2">Ready when you are.</h2><p class="lead">Send the application and you will hear back once we have reviewed your channels.</p></div>
+      <form class="fm" data-subject="[Creator application]" novalidate>
+        <label class="f"><span>Name<i>*</i></span><input type="text" name="Name" required autocomplete="name"></label>
+        <label class="f"><span>Email<i>*</i></span><input type="email" name="Email" required autocomplete="email"></label>
+        <label class="f full"><span>Channel links<i>*</i></span><input type="text" name="Channels" required placeholder="YouTube, Instagram, TikTok"></label>
+        <label class="f full"><span>What you create, and brands you would like to work with</span><textarea name="About"></textarea></label>
+        <label class="agree full"><input type="checkbox" required><span>I agree to the use of my name, email and channel links for reviewing this application.</span></label>
+        <button class="go full" type="submit">Send application</button>
+        <output class="full" aria-live="polite"></output>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ===================================================== CONTACT -->
+<div class="page" data-page="contact" data-title="문의하기 | 드에프">
+  <section class="ph"><div class="wrap"><span class="lab">문의하기</span><h1>홈쇼핑, 미국 진출,<br>또는 둘 다.</h1><p>가입이나 로그인 없이 바로 남기실 수 있습니다. 문의 영역만 골라 주시면 담당자가 직접 읽고 연락드립니다.</p></div></section>
+  <section class="sec">
+    <div class="wrap ct">
+      <div>
+        <span class="lab">이렇게 진행됩니다</span>
+        <ol class="hist">
+          <li><b>01</b><span>문의 접수 <em>— 담당자가 직접 읽습니다</em></span></li>
+          <li><b>02</b><span>연락 <em>— 영업일 기준 2일 안에 연락드립니다</em></span></li>
+          <li><b>03</b><span>미팅 · 제안 <em>— 상황을 듣고 맞는 방법을 제안합니다</em></span></li>
+        </ol>
+        <p class="note">미국 진출 문의는 접수 후 더 자세한 내용을 적으실 수 있는 안내를 따로 보내 드립니다.</p>
+        <ul class="kv" style="margin-top:32px">
+          <li><b>이메일</b><span>def@deflab.kr</span></li>
+          <li><b>주소</b><span>서울특별시 송파구 법원로 128 SKV1 B1005</span></li>
+        </ul>
+      </div>
+      <form class="fm one" data-subject="[문의]" novalidate>
+        <p class="note full" style="margin-top:0"><i class="req">*</i> 는 필수 입력 항목입니다.</p>
+        <fieldset class="full"><legend>문의 영역<i class="req">*</i></legend>
+          <div class="pick">
+            <label><input type="radio" name="문의 영역" value="홈쇼핑" checked><span>홈쇼핑</span></label>
+            <label><input type="radio" name="문의 영역" value="미국 진출"><span>미국 진출</span></label>
+            <label><input type="radio" name="문의 영역" value="홈쇼핑 + 미국 진출"><span>둘 다</span></label>
+          </div>
+        </fieldset>
+        <label class="f full"><span>회사명 / 브랜드명<i>*</i></span><input type="text" name="회사명 / 브랜드명" required autocomplete="organization"></label>
+        <label class="f full"><span>회사 서비스 / 웹사이트</span><input type="text" name="회사 서비스 / 웹사이트" placeholder="예: 스킨케어 브랜드 · https://"></label>
+        <label class="f full"><span>담당자 이름 / 직책<i>*</i></span><input type="text" name="담당자 이름 / 직책" required autocomplete="name"></label>
+        <label class="f full"><span>연락처<i>*</i></span><input type="tel" name="연락처" required autocomplete="tel" placeholder="010-1234-5678"></label>
+        <label class="f full"><span>담당자 이메일<i>*</i></span><input type="email" name="담당자 이메일" required autocomplete="email"></label>
+        <label class="f full"><span>문의 내용<i>*</i></span><textarea name="문의 내용" required placeholder="제품과 지금 상황, 궁금한 점을 간단히 적어 주세요."></textarea></label>
+        <label class="agree full"><input type="checkbox" required><span>[필수] 문의 응대를 위한 개인정보(회사명, 담당자, 연락처, 이메일) 수집 · 이용에 동의합니다. 답변을 마친 날부터 1년 보관한 뒤 파기합니다.</span></label>
+        <button class="go full" type="submit">문의 보내기</button>
+        <output class="full" aria-live="polite"></output>
+      </form>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="t"><a class="logo" href="#home">DEF<i>.</i></a><nav aria-label="하단 메뉴"><a href="#about">회사소개</a><a href="#homeshopping">홈쇼핑</a><a href="#usa">미국 진출</a><a href="#work">실적</a><a href="#creators">크리에이터</a><a href="#creator-join">For Creators</a><a href="#contact">문의하기</a></nav></div>
+    <p class="addr"><span>주식회사 드에프 (DEF Inc.)</span><span>대표 반연주 · 안호성</span><span>서울특별시 송파구 법원로 128 SKV1 B1005</span><span>def@deflab.kr</span></p>
+    <p class="cp">© 2026 DEF Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const PAGES = ['home','about','homeshopping','usa','usa-team','usa-services','usa-work','work','creators','creator-join','contact'];
+  const ALIAS = {services:'usa-services', hs:'homeshopping', us:'usa', global:'usa', results:'work', mcn:'creators', creator:'creator-join', apply:'contact', ask:'contact', signup:'contact', join:'contact', login:'contact'};
+  const DEEP = {'creator-apply':'creator-join--apply', 'contact--creator':'creator-join--apply'};
+  const US = ['usa','usa-team','usa-services','usa-work','creators','creator-join'];
+  function route(){
+    let raw = (location.hash || '#home').slice(1);
+    if (DEEP[raw]) raw = DEEP[raw];
+    let [name, sec] = raw.split('--');
+    if (ALIAS[name]) name = ALIAS[name];
+    if (!PAGES.includes(name)) name = 'home';
+    const page = $(`.page[data-page="${name}"]`);
+    $$('.page').forEach(p => p.classList.toggle('on', p === page));
+    document.title = page.dataset.title;
+    const top = US.includes(name) ? 'usa' : name;
+    $$('.nav a').forEach(a => a.classList.toggle('on', a.dataset.nav === top));
+    $$('.subnav a').forEach(a => a.classList.toggle('on', a.dataset.sub === name));
+    const t = sec && document.getElementById(name + '--' + sec);
+    const off = 96 + ($('.subnav', page) ? 52 : 0);
+    if (t) requestAnimationFrame(() => window.scrollTo(0, t.getBoundingClientRect().top + scrollY - off));
+    else window.scrollTo(0, 0);
+    closeMenu();
+  }
+  addEventListener('hashchange', route);
+  document.addEventListener('click', e => { const a = e.target.closest('a[href^="#"]'); if (a && a.getAttribute('href') === location.hash) { e.preventDefault(); route(); } });
+  const mb = $('#mbtn'), nav = $('#nav');
+  function closeMenu(){ nav.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); mb.textContent = '메뉴'; document.body.style.overflow = ''; }
+  mb.addEventListener('click', () => { const o = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', o); mb.textContent = o ? '닫기' : '메뉴'; document.body.style.overflow = o ? 'hidden' : ''; });
+
+  $$('form.fm').forEach(f => f.addEventListener('submit', e => {
+    e.preventDefault();
+    const out = $('output', f), en = !!f.closest('[lang="en"]');
+    const say = (msg, err) => { out.className = 'full' + (err ? ' err' : ''); out.textContent = msg; };
+    const fields = $$('input[type=text],input[type=email],input[type=tel],textarea', f);
+    const empty = fields.find(el => el.required && !el.value.trim());
+    if (empty) { say((en ? 'Please fill in: ' : '필수 항목을 입력해 주세요: ') + empty.name, true); empty.focus(); return; }
+    const mail = $('input[type=email]', f);
+    if (mail && !/^\S+@\S+\.\S+$/.test(mail.value)) { say(en ? 'Please check the email address.' : '이메일 주소 형식을 확인해 주세요.', true); mail.focus(); return; }
+    const agree = $('input[type=checkbox]', f);
+    if (agree && !agree.checked) { say(en ? 'Please tick the consent box.' : '개인정보 수집 · 이용에 동의해 주세요.', true); return; }
+    const lines = [];
+    const us = /미국/.test((($('input[type=radio]:checked', f) || {}).value) || '');
+    const picked = $('input[type=radio]:checked', f);
+    if (picked) lines.push(picked.name + ': ' + picked.value);
+    fields.forEach(el => lines.push(el.name + ': ' + el.value));
+    say(en ? 'Your mail app will open. Please review and send. If it does not open, write to def@deflab.kr.' : '메일 앱에서 내용을 확인한 뒤 보내 주세요. 메일 앱이 열리지 않으면 def@deflab.kr로 보내 주세요.' + (us ? ' 미국 진출 문의는 접수 후 자세한 내용을 적으실 수 있는 안내를 따로 보내 드립니다.' : ''));
+    location.href = 'mailto:def@deflab.kr?subject=' + encodeURIComponent(f.dataset.subject + ' ' + fields[0].value) + '&body=' + encodeURIComponent(lines.join('\n'));
+  }));
+
+  route();
+})();
+</script>
+</body>
+</html>
