@@ -475,7 +475,8 @@ a:hover{color:#FFFFFF;opacity:.72}
           <span style="display:flex;align-items:center;gap:10px;font:500 12px 'Geist Mono','Pretendard Variable',monospace;letter-spacing:.03em;text-transform:uppercase;color:{{ b.c.muted }}"><span style="width:7px;height:7px;border-radius:50%;background:{{ b.c.dot }}"></span>{{ b.eyebrow }}</span>
           <p style="margin:0;font-weight:700;font-size:clamp(22px,2.6vw,36px);line-height:1.4;letter-spacing:-0.035em;color:{{ b.c.muted }};text-wrap:balance"><sc-for list="{{ b.q }}" as="ln" hint-placeholder-count="2"><span style="display:block">{{ ln }}</span></sc-for></p>
           <h2 style="margin:0;font-weight:400;font-size:clamp(48px,8.4vw,128px);line-height:1.08;letter-spacing:-0.06em;text-wrap:balance">{{ b.a }}</h2>
-          <p style="margin:0;max-width:700px;font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:{{ b.c.body }};text-wrap:pretty">{{ b.lead }}</p>
+          <sc-if value="{{ b.leadPlain }}" hint-placeholder-val="{{ false }}"><p style="margin:0;max-width:700px;font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:{{ b.c.body }};text-wrap:pretty">{{ b.leadPlain }}</p></sc-if>
+          <sc-if value="{{ b.leadEm }}" hint-placeholder-val="{{ false }}"><p style="margin:0;max-width:820px;font-size:clamp(19px,1.9vw,26px);line-height:1.6;letter-spacing:-0.02em;color:{{ b.c.body }};text-wrap:balance">{{ b.leadPre }}<strong style="font-weight:700;font-size:1.22em;color:{{ b.c.ink }};box-shadow:inset 0 -.14em 0 {{ b.c.dot }};padding:0 .06em;margin:0 .04em">{{ b.leadEm }}<span style="font-family:'Geist',sans-serif;font-weight:500;font-size:.62em;letter-spacing:-0.01em;margin-left:.14em">{{ b.leadEn }}</span></strong>{{ b.leadPost }}</p></sc-if>
         </div>
       </sc-if>
 
@@ -1326,7 +1327,7 @@ class Component extends DCLogic {
         fxEl: b.fx === 'merge' ? h(SLTitle, { text: '실력과 전우애.', ink: c.ink, muted: c.muted }) : null,
         isDefname: t === 'defname', isSlot: t === 'slot', slotId: b.slotId, ph: b.ph,
         isNums: t === 'nums', isQa: t === 'qa', isEmblems: t === 'emblems', isMega: t === 'mega', isProse: t === 'prose', isPhoto: t === 'photo', isDuo: t === 'duo',
-        q: b.q, a: b.a, sub: b.sub, em: b.em, sign: b.sign, megaSize: b.hero ? 'clamp(48px,8.4vw,128px)' : 'clamp(38px,5.8vw,84px)',
+        q: b.q, a: b.a, leadPlain: b.leadEm ? null : b.lead, leadPre: b.leadPre, leadEm: b.leadEm, leadEn: b.leadEn, leadPost: b.leadPost, sub: b.sub, em: b.em, sign: b.sign, megaSize: b.hero ? 'clamp(48px,8.4vw,128px)' : 'clamp(38px,5.8vw,84px)',
         stackHd: ['cards', 'chips', 'people', 'onair', 'apply', 'emblems', 'duo'].includes(t) && !!b.title,
         cta: b.cta, onCta: b.go ? this.go(b.go) : null,
         blockCta: (t !== 'head' && t !== 'cta') ? b.cta : null, blockHref: '#' + (b.go || ''), onBlockCta: b.go ? this.go(b.go) : null,
