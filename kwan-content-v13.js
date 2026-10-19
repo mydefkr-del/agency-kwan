@@ -3,9 +3,9 @@
 const A = (p) => 'assets/' + p, U = (p) => 'assets/us/' + p;
 
 const ABOUT = [
-  { type: 'head', eyebrow: 'About · 회사소개', title: ['실력으로 검증받은', '두 개의 팀.'], lead: '홈쇼핑에서 3년 연속 카테고리 1위를 만든 팀, 2017년부터 미국 현장을 지켜 온 팀. 각자의 시장에서 결과로 증명했고, 필요할 때는 한 팀으로 움직입니다.', viz: 'teams' },
+  { type: 'head', eyebrow: 'About · 회사소개', title: ['실력으로 검증받은', '2개의 팀.'], lead: '홈쇼핑에서 3년 연속 카테고리 1위를 만든 팀, 2017년부터 미국 현장을 지켜 온 팀. 각자의 시장에서 결과로 증명했고, 필요할 때는 한 팀으로 움직입니다.', viz: 'teams' },
   { type: 'cards', tone: 'paper', eyebrow: 'Two teams · 두 사업팀', title: ['각자의 시장에서,', '끝까지 책임집니다.'], minw: '320px', items: [
-    { n: '홈쇼핑 사업팀 · 뷰티 전문', t: '브랜드를 만들고, 방송에서 이깁니다.', d: '상품 기획과 브랜드 설계로 시작해 생방송, 추가 편성, 다른 홈쇼핑사 입점까지 맡습니다.', cta: '홈쇼핑 사업 보기', go: 'homeshopping' },
+    { n: '홈쇼핑 사업팀 · 뷰티 전문', t: '브랜드를 만들고, 홈쇼핑에서 성공할 수 있는 제품을 만듭니다.', d: '상품 기획과 브랜드 설계로 시작해 생방송, 추가 편성, 다른 홈쇼핑사 입점까지 맡습니다.', cta: '홈쇼핑 사업 보기', go: 'homeshopping' },
     { n: '미국 진출 사업팀 · 카테고리 제한 없음', t: '한국 브랜드를 미국 시장에 세웁니다.', d: '크리에이터 캠페인으로 알리고, 현지 판매처 입점과 팝업으로 판매까지 잇습니다.', cta: '미국 진출 사업 보기', go: 'usa' } ], note: '두 팀은 각자 움직이고, 필요할 때는 한 팀으로 움직입니다.' },
 
   { type: 'people', eyebrow: '홈쇼핑 사업팀 · 대표', title: ['홈쇼핑 뷰티 최전선에서', '17년을 보낸 두 사람.'], items: [
@@ -14,10 +14,12 @@ const ABOUT = [
   { type: 'nums', items: [
     { v: '3', u: '년 연속', l: '홈쇼핑 카테고리 1위' }, { v: '5,500', u: '억', l: '누적 매출' },
     { v: '500', u: '개', l: '상품' }, { v: '500', u: '개', l: '협력사' }, { v: '17', u: '년', l: '홈쇼핑 경력' } ] },
-  { type: 'qa', tone: 'paper', eyebrow: '홈쇼핑 사업팀', q: ['지금도 홈쇼핑에서', '성공할 수 있냐고 묻는다면.'], a: '네, 성공할 수 있습니다.', leadPre: '단, 홈쇼핑에 ', leadEm: '몰입', leadEn: '(Immersion)', leadPost: '할 수 있는 전략이 있어야 합니다.' },
+  { type: 'qa', tone: 'paper', eyebrow: '홈쇼핑 사업팀', q: ['지금도 홈쇼핑에서', '성공할 수 있냐고 묻는다면.'], a: '네, 성공할 수 있습니다.', leadA: '단, 홈쇼핑에 ', leadEm: '몰입(IMMERSION)', leadB: '할 수 있는 전략이 있어야 합니다.', lead: '홈쇼핑 경험이 없던 신설 법인이 10개월 만에 260억 원을 만들었습니다. 판매가 줄던 카테고리에서도, 여러 번 고전한 브랜드로도 1위를 만들었습니다.' },
   { type: 'emblems', eyebrow: '홈쇼핑 사업팀 · 성과', title: ['말이 아닌 성과로 증명합니다.'], lead: '홈쇼핑 사업이 만든 3년의 성과입니다. 지금도 홈쇼핑 업계에서 연간 200억 원 이상 브랜드를 만들고 있는 팀입니다.', items: [
     { y: '2026', t: '스킨케어', d: '5개월 139억 원' }, { y: '2025', t: '마스크 · 팩', d: '메디힐 유일 홈쇼핑 파트너사' }, { y: '2024', t: '헤어 · 두피', d: '10개월 260억 원' } ], cta: '홈쇼핑 사업 보기', go: 'homeshopping' },
 
+  { type: 'mega', eyebrow: 'DEF Moat · 해자', title: ['실력(COMPETENCE)과 허슬(HUSTLE)이 만나면,', '누구도 넘볼 수 없는 **해자(MOAT)**가 됩니다.'], lead: '실력과 허슬을 갖춘 두 팀이 만나면 서로를 향한 전폭적인 신뢰가 생기고, 그 신뢰는 쌍방의 로열티가 됩니다.' },
+  { type: 'photo', img: A('moat-rings3.png'), cap: 'DEF // MOAT — SKILL + HUSTLE → TRUST → SUPER LOYALTY → MOAT' },
   { type: 'split', tone: 'paper', eyebrow: '미국 진출 사업팀 · 함께한 기업', title: ['18년 동안 쌓은 경험으로', '한 팀처럼 움직입니다.'], paras: ['출판에서 시작해 디자인, 유통, 미국 현장까지. DEF 미국 진출 사업을 실행하는 팀이 해 온 일입니다.'], img: U('community-ue.webp'), cap: '미국 인플루언서 커뮤니티', defs: [
     { k: '2008년부터', v: '브랜드를 만들다 — 진에어 디자인 리뉴얼부터 기내지 발간까지 · 대한항공 50주년 엠블럼, 평창 올림픽 기념 보딩패스 · 삼성전자 캐릭터 · 콘텐츠 디자인' },
     { k: '2015년 유통 확장부터', v: '팔리게 하다 — 롯데면세점 메인 모델 에이전시 · 입점 운영 · 신세계면세점 · 갤러리아백화점 프리미엄 유통 운영 · 펜할리곤스 · 야만 한국 첫 도입과 정착' },
@@ -62,18 +64,33 @@ const HS = [
 ];
 
 const PHILO = [
-  { type: 'mega', hero: true, eyebrow: 'Philosophy · 철학', title: ['우리는 이렇게', '싸웁니다.'], lead: 'DEF라는 이름에 담은 뜻, 그리고 비즈니스 전장에서 우리가 지키는 원칙입니다.' },
+  { type: 'mega', hero: true, eyebrow: 'Philosophy · 철학', title: ['우리는 **우아** 떨지 않습니다.', '맹렬히 **허슬**합니다.'], lead: 'DEF라는 이름에 담은 뜻, 그리고 홈쇼핑과 미국 시장에서 우리가 지키는 원칙입니다.' },
   { type: 'defname', eyebrow: 'DEF Philosophy · 01', title: ['DEF라는 이름에 담은 것.'], items: [
-    { suf: 'INITION', ko: 'DEFINITION · 정의', t: '명확하게. 정확하게. 명백하게.', d: '모호한 말로 일하지 않습니다. 무엇을, 언제까지, 어떤 결과로 만들지 처음부터 분명히 정의하고 그대로 해냅니다.' },
-    { suf: 'ENDER', ko: 'DEFENDER · 수호자', t: '전우를 지키며, 함께 싸웁니다.', d: '고객사는 우리의 전우입니다. 비즈니스 전장에서 내 편처럼 보호하고, 끝까지 함께 싸웁니다.' } ] },
-  { type: 'duo', tone: 'paper', eyebrow: 'DEF Philosophy · 02', title: ['비즈니스 시장에서', '살아남는 단 두 가지.'], items: [
-    { n: '01', t: '유능함', d: '어떤 문제든 해결할 수 있는 실력.' },
-    { n: '02', t: '전우애', d: '상대방의 진정한 성공을 위해 함께 싸우는 마음.' } ] },
-  { type: 'viz', viz: 'comrades' },
-  { type: 'mega', eyebrow: 'DEF Philosophy · 03 · Skill without loyalty', title: ['아무리 실력이 좋아도,', '혼자만 살겠다고 하면', '결국 죽습니다.'], lead: '둘 중 하나만으로는 살아남을 수 없습니다.' },
-  { type: 'mega', tone: 'paper', eyebrow: 'DEF Philosophy · 04 · Loyalty without skill', title: ['아무리 진심을 다해도,', '실력이 없으면', '죽습니다.'] },
-  { type: 'mega', tone: 'navy', eyebrow: 'DEF Philosophy · 05 · Skill & Loyalty', fx: 'merge', title: ['그래서'], lead: '두 가지가 함께 있어야만, 지금의 홈쇼핑과 미국 시장에서 살아남을 수 있습니다.' },
-  { type: 'mega', eyebrow: 'Closing', title: ['실력과 전우애.'], lead: '이 가치에 동의한다면, 시작해 보시죠.', sign: 'DEF 대표 반연주 · 안호성' },
+    { suf: 'INITION', ko: 'DEFINITION · 정의', t: '명확하게. 정확하게. 명백하게.', d: '모호한 말로 일하지 않습니다. 무엇을, 언제까지, 어떤 결과로 만들지 처음부터 분명하게 정하고 그대로 지킵니다.' },
+    { suf: 'ENDER', ko: 'DEFENDER · 수호자', t: '고객사를 지키며, 함께 싸웁니다.', d: '홈쇼핑과 미국 시장이라는 전장에서 고객사를 내 편처럼 보호하고, 끝까지 함께 싸웁니다.' } ] },
+  { type: 'duo', tone: 'paper', eyebrow: 'DEF Philosophy · 02', title: ['비즈니스 시장에서', '살아남는 단 2가지.'], items: [
+    { n: '01', t: '유능함 (COMPETENCE)', d: '어떤 문제든 해결할 수 있는 실력.' },
+    { n: '02', t: '허슬 (HUSTLE)', d: '상대방의 진정한 성공을 위해 함께 싸우는 마음.' } ] },
+  { type: 'viz', viz: 'stars' },
+  { type: 'mega', eyebrow: 'DEF Philosophy · 03 · Competence without humility', title: ['아무리 실력이 좋아도,', '겸손함이 없으면', '살아남을 수 없습니다.'] },
+  { type: 'mega', tone: 'paper', eyebrow: 'DEF Philosophy · 04 · Sincerity without fight', title: ['아무리 진심을 다해도,', '맹렬히 싸워야 할 때 싸우지 않으면', '경쟁자에게 잡아먹힙니다.'] },
+  { type: 'mega', eyebrow: 'DEF Philosophy · 05 · Luck without skill', title: ['아무리 운이 좋아도,', '실력이 좋아야', '운도 따라붙습니다.'] },
+  { type: 'mega', tone: 'paper', eyebrow: 'DEF Philosophy · 06 · Without desire', title: ['반드시 이루겠다는', '열망이 없으면', '살아남을 수 없습니다.'] },
+  { type: 'mega', tone: 'navy', eyebrow: 'DEF Philosophy · 07 · Competence × Hustle', fx: 'merge', title: ['그래서'], lead: '실력과 허슬이 합쳐질 때, 서로를 향한 전폭적인 신뢰가 만들어집니다.' },
+  { type: 'prose', eyebrow: 'DEF Philosophy · 08 · 신뢰', title: ['아무 조건 없이', '믿어 달라는 것이 아닙니다.'], paras: [
+    '과정을 투명하게 보여 드리고, 보내 주신 신뢰에 결과로 보답합니다.',
+    '그래서 이런 팀의 가치를 알아보는 사람을 만나는 일은 매우 중요합니다. 신뢰는 한쪽이 요구해서 생기는 것이 아니라, 서로가 증명하며 쌓아 가는 것이기 때문입니다.' ] },
+  { type: 'prose', tone: 'paper', eyebrow: 'DEF Philosophy · 09 · 순서', title: ['가장 중요한 것은 실력.', '그다음은 허슬.'], paras: [
+    '제일 먼저 필요한 것은 실력입니다. 그리고 그 실력을 바탕으로, 어떤 문제가 와도 뚫고 나가려는 허슬이 필요합니다.',
+    '이 두 가지가 합쳐질 때, 고객과 파트너를 넘어선 관계를 만들 힘이 생깁니다.' ],
+    em: '우리는 그 힘이 서로 간에 **슈퍼 로열티(SUPER LOYALTY)**를 만든다고 믿습니다.' },
+  { type: 'mega', tone: 'navy', eyebrow: 'DEF Philosophy · 10 · Loyalty', title: ['로열티는', '**쌍방**입니다.'], lead: '실력과 허슬을 갖춘 두 팀이 만나면, 다른 누구도 넘볼 수 없는 로열티가 서로 간에 형성됩니다.' },
+  { type: 'viz', viz: 'burst' },
+  { type: 'prose', eyebrow: 'DEF Philosophy · 11 · 해자(MOAT)', title: ['그 로열티가', '해자(MOAT)가 됩니다.'], paras: [
+    '해자는 성을 둘러 지키는 물길입니다. 경쟁자가 아무리 많아도, 서로를 향한 신뢰로 둘러싸인 관계에는 쉽게 건너올 수 없습니다.',
+    '실력이 신뢰를 만들고, 허슬이 그 신뢰를 지키고, 쌍방의 로열티가 해자를 이룹니다. 이것이 DEF가 홈쇼핑과 미국 시장에서 오래 이기는 방식입니다.' ] },
+  { type: 'viz', viz: 'moat' },
+  { type: 'mega', eyebrow: 'Closing', title: ['실력과 **허슬**.'], lead: '이 가치를 알아보는 분이라면, 언제든 환영합니다. 시작해 보시죠.', sign: 'DEF 대표 반연주 · 안호성' },
 ];
 
 const ABOUT_TABS = [
@@ -82,26 +99,26 @@ const ABOUT_TABS = [
 ];
 const LETTER = [
   { type: 'mega', hero: true, eyebrow: 'Letter · 인사말', title: ['오직 실력으로', '검증받는 세계.'], lead: '무슨 일이든 맡으면 해결하는 사람들. 고도로 훈련된 전문가들. DEF가 일하는 방식이자, 함께할 사람에게 요구하는 기준입니다.' },
-  { type: 'viz', viz: 'elite' },
+  { type: 'viz', viz: 'pyramid' },
   { type: 'prose', eyebrow: '01 · 기회', title: ['홈쇼핑과 미국 시장,', '지금은 분명한 기회입니다.'], paras: [
     'K-뷰티가 세계의 흐름을 만들고 있고, 누구든 브랜드를 시작할 수 있는 시장이 열렸습니다. 홈쇼핑은 이미 모여 있는 고객에게 곧바로 닿는 채널이고, 미국은 한국 화장품의 1위 수출국이 됐습니다.',
     '하지만 시작하기 쉬워진 만큼 살아남기는 어려워졌습니다. 경쟁은 치열해졌고, 진입 장벽과 비용은 그 어느 때보다 높습니다.' ] },
-  { type: 'mega', tone: 'navy', eyebrow: 'Warning · 경고', title: ['예전처럼 해서는', '필패입니다.'], lead: '잘되는 몇몇 브랜드만 보고 나도 될 것이라 생각하는 순간, 그 길은 필패로 이어집니다.' },
+  { type: 'mega', tone: 'navy', accent: true, eyebrow: 'Warning · 경고', title: ['예전처럼 해서는', '필패입니다.'], lead: '잘되는 몇몇 브랜드만 보고 나도 될 것이라 생각하는 순간, 그 길은 필패로 이어집니다.' },
   { type: 'viz', viz: 'migration' },
   { type: 'prose', tone: 'paper', eyebrow: '02 · 현실', title: ['몇 개의 성공 사례만 보고', '뛰어들면 집니다.'], paras: [
     '플랫폼은 고객을 모아 주지만, 그만큼 수수료 부담이 크고 정보의 비대칭 속에서 휘둘리기 쉽습니다. 시장은 매일 바뀌고, 방송 당일의 판단 하나가 결과를 가릅니다.',
     '이 시장을 깊이 알고, 실제로 이겨 본 팀과 함께하지 않으면 버티기 어렵습니다.' ] },
-  { type: 'stat', tone: 'navy', eyebrow: '17 years · 시장 최전선에서', big: '17', title: '결국은 유능함과 전우애입니다.', lead: '단순한 고객과 파트너의 관계로는 이길 수 없습니다. 17년간 시장 최전선에서 직접 겪었고, 지금도 매일 목격하고 있는 진실입니다.' },
-  { type: 'duo', eyebrow: '03 · 우리가 약속하는 것', title: ['우리가 약속하는', '두 가지.'], items: [
+  { type: 'stat', tone: 'navy', eyebrow: '17 years · 시장 최전선에서', big: '17', title: '결국은 유능함과 신뢰입니다.', lead: '유능함은 기본입니다. 지금은 전폭적인 신뢰가 필요합니다. 17년간 시장 최전선에서 경험했고, 지금도 목격하고 있는 진실입니다.' },
+  { type: 'duo', eyebrow: '03 · 우리가 약속하는 것', title: ['우리가 약속하는', '2가지.'], items: [
     { n: '01', t: '실력', d: '말이 아니라 결과로 증명합니다. 레퍼런스로 검증된 실력만 내놓습니다.' },
     { n: '02', t: '신뢰', d: '숨기지 않고 정직하게 말합니다. 결정은 언제나 함께 내립니다.' } ] },
   { type: 'viz', viz: 'grid' },
-  { type: 'prose', tone: 'paper', eyebrow: '04 · 전우 전략', title: ['비즈니스 현장은', '전쟁터입니다.'], paras: [
-    '그래서 우리는 고객과 파트너의 관계를 넘어섭니다. 전장에서 서로의 등을 맡기는 전우처럼, 한번 함께하면 끝까지 의리를 지킵니다.',
-    '맡은 일은 해결합니다. 어떤 상황에서도 등을 돌리지 않습니다. 우리는 이것을 전우 전략이라 부릅니다.' ] },
+  { type: 'prose', tone: 'paper', eyebrow: '04 · 그 이상의 관계', title: ['홈쇼핑과 미국 시장은', '전쟁터입니다.'], paras: [
+    '그래서 우리는 고객과 파트너의 관계를 넘어섭니다. 한번 함께하면, 끝까지 의리를 지킵니다.',
+    '맡은 일은 해결합니다. 어떤 문제가 와도 뚫고 나가는 허슬로, 신뢰에 결과로 보답합니다.' ] },
   { type: 'stat', tone: 'navy', eyebrow: 'Proof · 우리가 믿는 것이 만든 결과', big: 'No.1', title: '최근 3년, 카테고리 1위를 연속으로 만들어 냈습니다.', lead: '2024 헤어 · 두피, 2025 마스크 · 팩, 2026 스킨케어. 우리가 믿는 방식이 증명한 결과입니다.' },
   { type: 'photo', img: U('roundtable.webp'), cap: '베벌리힐스 뷰티클래스' },
-  { type: 'mega', eyebrow: 'Closing', title: ['실력과 전우애.'], lead: '이 가치에 동의한다면, 시작해 보시죠.', sign: 'DEF 대표 반연주 · 안호성' },
+  { type: 'mega', eyebrow: 'Closing', title: ['실력과 **허슬**.'], lead: '이 가치에 동의한다면, 시작해 보시죠.', sign: 'DEF 대표 반연주 · 안호성' },
 ];
 
 const US_TABS = [
