@@ -4,6 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="naver-site-verification" content="c5bbce0c57a94ca0e3ab89e7679c8e6eede41eda" />
+<script>
+// 홈페이지 문의 → 구글 시트 "드에프 홈페이지 문의" + def@deflab.kr 알림 (Apps Script 웹 앱)
+window.DEF_INQUIRY_URL = 'https://script.google.com/macros/s/AKfycbwk3QnIo4NJyg2U3ukPYUYVvhkA3EmAPKzzzHhrm10UzIK57fWAzpuEALSWobkl6zMe6w/exec';
+window.defSendInquiry = function (d) {
+  var body = new URLSearchParams();
+  Object.keys(d).forEach(function (k) { body.append(k, d[k] == null ? '' : String(d[k])); });
+  body.append('page', location.pathname + location.hash);
+  return fetch(window.DEF_INQUIRY_URL, { method: 'POST', mode: 'no-cors', body: body }).then(function () { return true; }, function () { return false; });
+};
+</script>
 <!-- SEO-HEAD -->
 <title>For Creators | DEF</title>
 <meta name="description" content="Join DEF as a creator. No minimum follower count, no exclusivity.">
@@ -28,6 +38,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://agency-def.com/#org", "name": "드에프", "legalName": "주식회사 드에프", "alternateName": ["DEF", "드에프 DEF", "DEF Inc.", "def", "드애프", "디이에프", "데프"], "url": "https://agency-def.com/", "logo": "https://agency-def.com/og-image.jpg", "image": "https://agency-def.com/og-image.jpg", "email": "def@deflab.kr", "description": "드에프(DEF)는 홈쇼핑 에이전시이자 미국 진출 에이전시입니다. 홈쇼핑 상품 기획·입점·방송 운영과 아마존 입점, 틱톡·인스타그램 인플루언서 시딩, 미국 수출을 함께 합니다.", "address": {"@type": "PostalAddress", "streetAddress": "법원로 128 SKV1 B1005", "addressLocality": "송파구", "addressRegion": "서울특별시", "addressCountry": "KR"}, "founder": [{"@type": "Person", "name": "반연주"}, {"@type": "Person", "name": "안호성"}], "areaServed": ["KR", "US"], "knowsAbout": ["홈쇼핑 에이전시", "홈쇼핑 벤더", "홈쇼핑 입점", "홈쇼핑 론칭", "수출 벤더", "미국 수출", "미국 진출", "아마존 입점", "틱톡 마케팅", "인플루언서 시딩", "인플루언서 마케팅", "K-뷰티"]}, {"@type": "WebSite", "@id": "https://agency-def.com/#site", "url": "https://agency-def.com/", "name": "드에프 DEF", "alternateName": ["DEF", "드에프"], "inLanguage": "ko", "publisher": {"@id": "https://agency-def.com/#org"}}]}</script>
 <base href="/">
 <script>if(!location.hash)history.replaceState(null,"",location.pathname+"#usa-join");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I apply with a small following?", "acceptedAnswer": {"@type": "Answer", "text": "There is no minimum follower count. We look at your channel's voice, how consistently you post, and how well you know your field."}}, {"@type": "Question", "name": "Do I have to sign exclusively?", "acceptedAnswer": {"@type": "Answer", "text": "No. DEF does not require exclusivity. You can work with DEF and with others at the same time."}}, {"@type": "Question", "name": "Can I turn down an offer?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If it is not a fit for you, just tell us so."}}, {"@type": "Question", "name": "How are fees and payment dates decided?", "acceptedAnswer": {"@type": "Answer", "text": "We put how it is calculated, what is deducted and when it is paid in writing before you sign."}}, {"@type": "Question", "name": "Can I keep my existing brand partnerships?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Because DEF does not require exclusivity, you do not have to end anything you already have."}}, {"@type": "Question", "name": "How far can my content be used?", "acceptedAnswer": {"@type": "Answer", "text": "Paid usage, re-edits, duration, territory and likeness are agreed for each project in advance. Nothing is used beyond what was agreed."}}, {"@type": "Question", "name": "How does a partnership end?", "acceptedAnswer": {"@type": "Answer", "text": "The term and how to end it are written into the contract. If work is in progress when it ends, we agree together how to finish it."}}, {"@type": "Question", "name": "Can I apply from outside Korea?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We will confirm which regions and languages we can work in, and how payments are handled."}}]}</script>
 <!-- /SEO-HEAD -->
 <script src="./support.js"></script>
 </head>
@@ -56,7 +67,16 @@
 <p>* This is one example. The actual timeline can change depending on the channel review and the projects in hand. We confirm the first campaign and payment dates once the terms are agreed.</p>
 <h2>Questions we hear a lot</h2>
 <h2>Ready when you are.</h2>
-<p>Send the application and you will hear back once we have reviewed your channels.</p></main><nav aria-label="사이트 메뉴"><ul><li><a href="/">드에프 DEF — 홈쇼핑 에이전시 · 미국 진출 에이전시</a></li><li><a href="/about/">회사소개</a></li><li><a href="/philosophy/">철학</a></li><li><a href="/home-shopping/">홈쇼핑 에이전시 · 홈쇼핑 입점</a></li><li><a href="/global/">미국 진출 · 미국 수출 에이전시</a></li><li><a href="/global/services/">미국 진출 서비스</a></li><li><a href="/global/story/">걸어온 길</a></li><li><a href="/global/work/">미국 진출 실적</a></li><li><a href="/global/creators/">크리에이터 · 인플루언서</a></li><li><a href="/global/for-creators/">For Creators</a></li><li><a href="/reference/">실적</a></li><li><a href="/contact/">문의하기</a></li></ul></nav><footer><p>주식회사 드에프 (DEF Inc.) · 대표 반연주 · 안호성 · 서울특별시 송파구 법원로 128 SKV1 B1005 · def@deflab.kr</p></footer></div>
+<p>Send the application and you will hear back once we have reviewed your channels.</p>
+<h2>FAQ</h2>
+<h3>Can I apply with a small following?</h3><p>There is no minimum follower count. We look at your channel&#x27;s voice, how consistently you post, and how well you know your field.</p>
+<h3>Do I have to sign exclusively?</h3><p>No. DEF does not require exclusivity. You can work with DEF and with others at the same time.</p>
+<h3>Can I turn down an offer?</h3><p>Yes. If it is not a fit for you, just tell us so.</p>
+<h3>How are fees and payment dates decided?</h3><p>We put how it is calculated, what is deducted and when it is paid in writing before you sign.</p>
+<h3>Can I keep my existing brand partnerships?</h3><p>Yes. Because DEF does not require exclusivity, you do not have to end anything you already have.</p>
+<h3>How far can my content be used?</h3><p>Paid usage, re-edits, duration, territory and likeness are agreed for each project in advance. Nothing is used beyond what was agreed.</p>
+<h3>How does a partnership end?</h3><p>The term and how to end it are written into the contract. If work is in progress when it ends, we agree together how to finish it.</p>
+<h3>Can I apply from outside Korea?</h3><p>Yes. We will confirm which regions and languages we can work in, and how payments are handled.</p></main><nav aria-label="사이트 메뉴"><ul><li><a href="/">드에프 DEF — 홈쇼핑 에이전시 · 미국 진출 에이전시</a></li><li><a href="/about/">회사소개</a></li><li><a href="/philosophy/">철학</a></li><li><a href="/home-shopping/">홈쇼핑 에이전시 · 홈쇼핑 입점</a></li><li><a href="/global/">미국 진출 · 미국 수출 에이전시</a></li><li><a href="/global/services/">미국 진출 서비스</a></li><li><a href="/global/story/">걸어온 길</a></li><li><a href="/global/work/">미국 진출 실적</a></li><li><a href="/global/creators/">크리에이터 · 인플루언서</a></li><li><a href="/global/for-creators/">For Creators</a></li><li><a href="/reference/">실적</a></li><li><a href="/contact/">문의하기</a></li></ul></nav><footer><p>주식회사 드에프 (DEF Inc.) · 대표 반연주 · 안호성 · 서울특별시 송파구 법원로 128 SKV1 B1005 · def@deflab.kr</p></footer></div>
 <script>(function(){var s=document.getElementById("seo-static");if(!s)return;var n=0,t=setInterval(function(){var r=document.getElementById("dc-root");if((r&&r.children.length)||++n>400){s.remove();clearInterval(t);}},50);})();</script>
 <x-dc>
 <helmet>
@@ -408,7 +428,7 @@ a:hover{color:#E8461E}
         <label style="display:flex;flex-direction:column;gap:8px"><span style="font:500 12px 'IBM Plex Mono',monospace;color:#9E9E9E">문의 내용 *</span><textarea name="message" required="{{ true }}" rows="5" placeholder="제품과 지금 상황을 편하게 적어 주세요." style="box-sizing:border-box;padding:14px 16px;border:1px solid #3A3A3A;background:#0E0E0E;color:#FFFFFF;font:500 16px/1.6 'Pretendard Variable',sans-serif;outline:none;resize:vertical" style-focus="border-color:#E8461E"></textarea></label>
         <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.6;color:#C8C8C8"><input type="checkbox" required="{{ true }}" style="margin-top:3px;width:18px;height:18px;accent-color:#E8461E"></input><span>[필수] 문의 응대를 위한 개인정보(회사명, 담당자, 연락처, 이메일) 수집 · 이용에 동의합니다. 답변을 마친 날부터 1년 보관한 뒤 파기합니다.</span></label>
         <button type="submit" style="height:58px;border-radius:0;border:0;background:#E8461E;color:#0E0E0E;font:800 16px 'Pretendard Variable',sans-serif;cursor:pointer" style-hover="background:#FFFFFF">문의 보내기 →</button>
-        <sc-if value="{{ v14.sent }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;color:#C8C8C8">메일 앱에서 내용을 확인한 뒤 보내 주세요.</span></sc-if>
+        <sc-if value="{{ v14.sent }}" hint-placeholder-val="{{ false }}"><span style="font-size:15px;color:#FFFFFF;font-weight:600">접수되었습니다. 대표가 직접 읽고 영업일 기준 2일 안에 연락드립니다.</span></sc-if>
       </form>
     </div>
   </section>
@@ -1396,7 +1416,7 @@ class Component extends DCLogic {
       areas: ['홈쇼핑', '미국 진출', '둘 다'].map(a => ({ l: a, bg: area === a ? ACC : 'transparent', ink: area === a ? '#0E0E0E' : '#FFFFFF', bd: area === a ? ACC : '#3A3A3A', go: () => this.setState({ area: a }) })),
       fields: [{ l: '회사명 / 브랜드명 *', name: 'company', type: 'text', req: true }, { l: '담당자 이름 / 직책 *', name: 'name', type: 'text', req: true }, { l: '연락처 *', name: 'phone', type: 'tel', req: true }, { l: '이메일 *', name: 'email', type: 'email', req: true }, { l: '웹사이트', name: 'site', type: 'text', req: false }],
       sent,
-      submit: e => { e.preventDefault(); const fd = new FormData(e.target); const body = ['문의 영역: ' + area, '회사/브랜드: ' + fd.get('company'), '담당자: ' + fd.get('name'), '연락처: ' + fd.get('phone'), '이메일: ' + fd.get('email'), '웹사이트: ' + (fd.get('site') || '-'), '', fd.get('message')].join('\n'); location.href = 'mailto:def@deflab.kr?subject=' + encodeURIComponent('[DEF 문의] ' + area + ' · ' + fd.get('company')) + '&body=' + encodeURIComponent(body); this.setState({ sent: true }); },
+      submit: e => { e.preventDefault(); const f = e.target; const fd = new FormData(f); const d = { area, company: fd.get('company'), name: fd.get('name'), tel: fd.get('phone'), email: fd.get('email'), web: fd.get('site') || '', message: fd.get('message') || '' }; window.defSendInquiry(d).then(ok => { if (ok) { this.setState({ sent: true }); f.reset(); } else { const body = ['문의 영역: ' + area, '회사/브랜드: ' + d.company, '담당자: ' + d.name, '연락처: ' + d.tel, '이메일: ' + d.email, '웹사이트: ' + (d.web || '-'), '', d.message].join('\n'); location.href = 'mailto:def@deflab.kr?subject=' + encodeURIComponent('[DEF 문의] ' + area + ' · ' + d.company) + '&body=' + encodeURIComponent(body); } }); },
       copyLabel: copied ? '복사됨' : '복사',
       copyEmail: () => { try { navigator.clipboard.writeText('def@deflab.kr'); } catch (_) {} this.setState({ copied: true }); clearTimeout(this._t); this._t = setTimeout(() => this.setState({ copied: false }), 1600); }
     };
@@ -1527,9 +1547,13 @@ class Component extends DCLogic {
       submit: (e) => {
         e.preventDefault();
         const fd = new FormData(e.target);
-        const body = [`문의 영역: ${area}`, `회사/브랜드: ${fd.get('company')}`, `웹사이트: ${fd.get('site') || '-'}`, `담당자: ${fd.get('name')}`, `연락처: ${fd.get('phone')}`, `이메일: ${fd.get('email')}`, '', fd.get('message')].join('\n');
-        window.location.href = `mailto:def@deflab.kr?subject=${encodeURIComponent(`[DEF 문의] ${area} · ${fd.get('company')}`)}&body=${encodeURIComponent(body)}`;
-        this.setState({ sent: true });
+        const f = e.target;
+        const d = { area, company: fd.get('company'), name: fd.get('name'), tel: fd.get('phone'), email: fd.get('email'), web: fd.get('site') || '', message: fd.get('message') || '' };
+        window.defSendInquiry(d).then(ok => {
+          if (ok) { this.setState({ sent: true }); f.reset(); return; }
+          const body = [`문의 영역: ${area}`, `회사/브랜드: ${d.company}`, `웹사이트: ${d.web || '-'}`, `담당자: ${d.name}`, `연락처: ${d.tel}`, `이메일: ${d.email}`, '', d.message].join('\n');
+          window.location.href = `mailto:def@deflab.kr?subject=${encodeURIComponent(`[DEF 문의] ${area} · ${d.company}`)}&body=${encodeURIComponent(body)}`;
+        });
       },
       applySubmit: (e) => {
         e.preventDefault();
