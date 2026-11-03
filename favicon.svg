@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <title>드에프 DEF</title>
-  <rect width="512" height="512" fill="#FFFFFF"/>
-  <rect x="96" y="96" width="320" height="320" rx="60" fill="#E8461E"/>
-  <path transform="translate(174 172) scale(0.62) translate(-85 -120)" fill="#FFFFFF" fill-rule="evenodd" d="M85 120H215A136 136 0 0 1 215 392H85Z M153 186H207A70 70 0 0 1 207 326H153Z"/>
+  <rect width="512" height="512" rx="112" fill="#0E0E0E"/>
+  <path fill="#FFFFFF" fill-rule="evenodd" d="M85 120H215A136 136 0 0 1 215 392H85Z M153 186H207A70 70 0 0 1 207 326H153Z"/>
+  <rect x="373" y="338" width="54" height="54" fill="#E8461E"/>
 </svg>
