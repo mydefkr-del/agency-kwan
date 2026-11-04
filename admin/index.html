@@ -108,6 +108,16 @@
   .side-links a { flex: 1; text-align: center; height: 36px; line-height: 34px; border: 1px solid var(--line); border-radius: 10px; font-size: 13px; font-weight: 600; text-decoration: none; }
   .side-links a:hover { border-color: var(--ink); }
 
+  .notice { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 16px; padding: 14px 16px; border-radius: var(--radius); background: var(--accent-soft); color: #8A2A10; font-size: 14px; font-weight: 600; }
+  .notice button { height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 700; cursor: pointer; }
+  .modal-bg { position: fixed; inset: 0; z-index: 30; background: rgba(14,14,14,.45); display: grid; place-items: center; padding: 16px; }
+  .modal { width: 100%; max-width: 400px; background: #fff; border-radius: 20px; padding: 28px 24px 22px; }
+  .modal h2 { margin: 0 0 6px; font-size: 20px; letter-spacing: -0.02em; }
+  .modal p { margin: 0 0 18px; color: var(--ink-2); font-size: 14px; }
+  .modal .field { margin-bottom: 10px; }
+  .modal-actions { display: flex; gap: 8px; margin-top: 8px; }
+  .modal-actions button { flex: 1; height: 48px; border-radius: 12px; font-weight: 700; cursor: pointer; }
+  .btn-cancel { border: 1px solid var(--line); background: #fff; }
   .empty { text-align: center; padding: 60px 16px; color: var(--ink-3); background: var(--card); border: 1px dashed var(--line); border-radius: var(--radius); }
   .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 999px; font-size: 14px; z-index: 20; }
 
@@ -143,6 +153,7 @@
       <div class="top-actions">
         <button class="btn-ghost" id="refresh" type="button" title="새로고침">↻ <span class="lbl">새로고침</span></button>
         <a class="btn-ghost" id="sheetLink" target="_blank" rel="noopener" title="시트 열기">▦ <span class="lbl">시트 열기</span></a>
+        <button class="btn-ghost" id="openPw" type="button" title="비밀번호 변경">🔒 <span class="lbl">비밀번호</span></button>
         <button class="btn-ghost" id="logout" type="button" title="로그아웃">로그아웃</button>
       </div>
     </div>
@@ -152,6 +163,7 @@
     <div class="head">
       <h1>홈페이지 문의</h1>
       <div class="sub" id="updated">불러오는 중…</div>
+      <div class="notice hidden" id="tempNotice"><span>임시 비밀번호로 들어왔습니다. 대표님만 아는 비밀번호로 바꿔 주세요.</span><button type="button" id="openPw2">비밀번호 정하기</button></div>
     </div>
 
     <div class="stats">
@@ -171,6 +183,18 @@
 
     <div class="list" id="list"></div>
   </main>
+</div>
+
+<div class="modal-bg hidden" id="pwModal">
+  <form class="modal" id="pwForm" autocomplete="on">
+    <h2>관리자 비밀번호 정하기</h2>
+    <p>10자 이상, 영문과 숫자를 섞어 주세요. 정한 비밀번호는 어디에도 글자 그대로 저장되지 않습니다.</p>
+    <input type="text" name="username" value="admin" autocomplete="username" class="hidden" aria-hidden="true" tabindex="-1">
+    <input class="field" id="pw1" type="password" placeholder="새 비밀번호" autocomplete="new-password" minlength="10" required>
+    <input class="field" id="pw2" type="password" placeholder="새 비밀번호 한 번 더" autocomplete="new-password" minlength="10" required>
+    <div class="err" id="pwErr" role="alert"></div>
+    <div class="modal-actions"><button class="btn-cancel" type="button" id="pwCancel">취소</button><button class="btn-primary" type="submit" id="pwSave">저장</button></div>
+  </form>
 </div>
 
 <div class="toast hidden" id="toast" role="status"></div>
@@ -224,6 +248,7 @@
       if (!d.ok) { store(false, ''); state.key = ''; showLogin(d.error === 'auth' ? '비밀번호가 바뀌었거나 틀렸습니다. 다시 로그인해 주세요.' : '불러오지 못했습니다.'); return false; }
       state.items = d.items.sort(function (a, b) { return b.ts - a.ts; });
       if (d.sheet) $('sheetLink').href = d.sheet;
+      $('tempNotice').classList.toggle('hidden', !d.temp);
       $('updated').textContent = '마지막 확인 ' + fmt(Date.now(), true);
       render();
       return true;
@@ -327,6 +352,28 @@
   $('q').addEventListener('input', function () { state.q = this.value; render(); });
   $('refresh').addEventListener('click', function () { load(); });
   $('logout').addEventListener('click', function () { store(false, ''); state.key = ''; showLogin(''); });
+
+  function remembered() { try { return !!localStorage.getItem(KEY_NAME); } catch (e) { return false; } }
+  function openPw() { $('pw1').value = ''; $('pw2').value = ''; $('pwErr').textContent = ''; $('pwModal').classList.remove('hidden'); setTimeout(function () { $('pw1').focus(); }, 50); }
+  $('openPw').addEventListener('click', openPw);
+  $('openPw2').addEventListener('click', openPw);
+  $('pwCancel').addEventListener('click', function () { $('pwModal').classList.add('hidden'); });
+  $('pwForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var a = $('pw1').value, b = $('pw2').value;
+    if (a.length < 10) { $('pwErr').textContent = '10자 이상으로 정해 주세요.'; return; }
+    if (!/[a-zA-Z]/.test(a) || !/[0-9]/.test(a)) { $('pwErr').textContent = '영문과 숫자를 섞어 주세요.'; return; }
+    if (a !== b) { $('pwErr').textContent = '두 칸의 비밀번호가 다릅니다.'; return; }
+    $('pwSave').disabled = true; $('pwErr').textContent = '';
+    api({ action: 'setpw', newKey: a }).then(function (d) {
+      $('pwSave').disabled = false;
+      if (!d.ok) { $('pwErr').textContent = d.error === 'short' ? '10자 이상으로 정해 주세요.' : '저장하지 못했습니다. 다시 로그인해 주세요.'; return; }
+      var keep = remembered();
+      state.key = a; store(false, a, keep);
+      $('pwModal').classList.add('hidden'); $('tempNotice').classList.add('hidden');
+      toast('비밀번호를 바꿨습니다. 다음부터 새 비밀번호로 로그인하세요.');
+    }).catch(function () { $('pwSave').disabled = false; $('pwErr').textContent = '연결하지 못했습니다. 다시 시도해 주세요.'; });
+  });
 
   $('loginForm').addEventListener('submit', function (e) {
     e.preventDefault();
