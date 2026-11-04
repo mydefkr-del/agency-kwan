@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 
 # AI 검색·답변 서비스 허용
 User-agent: GPTBot

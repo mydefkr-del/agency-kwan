@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>문의 관리 | 드에프</title>
+<link rel="icon" href="/favicon.ico?v=3" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+<meta name="theme-color" content="#FFFFFF">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --ink: #0E0E0E;
+    --ink-2: #4A4A4A;
+    --ink-3: #8A8A8A;
+    --line: #E7E5E1;
+    --bg: #F5F4F1;
+    --card: #FFFFFF;
+    --accent: #E8461E;
+    --accent-soft: #FDEEE8;
+    --ok: #1F7A4D;
+    --ok-soft: #E6F3EC;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif; font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  button, input, textarea { font: inherit; color: inherit; }
+  a { color: inherit; }
+  .hidden { display: none !important; }
+
+  /* 로그인 */
+  .login { min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; padding: 24px 16px; }
+  .login-card { width: 100%; max-width: 380px; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 36px 28px 28px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand-mark { width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--line); background: #fff url('/favicon.svg?v=3') center/80% no-repeat; flex: none; }
+  .brand-name { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; }
+  .login h1 { font-size: 24px; letter-spacing: -0.02em; margin: 28px 0 6px; }
+  .login p { margin: 0 0 22px; color: var(--ink-2); font-size: 14px; }
+  .field { width: 100%; height: 50px; border: 1px solid var(--line); border-radius: 12px; padding: 0 14px; background: #fff; outline: none; }
+  .field:focus { border-color: var(--ink); }
+  .remember { display: flex; align-items: center; gap: 8px; margin: 14px 0 18px; font-size: 14px; color: var(--ink-2); cursor: pointer; }
+  .remember input { width: 18px; height: 18px; accent-color: var(--ink); }
+  .btn-primary { width: 100%; height: 50px; border: 0; border-radius: 12px; background: var(--ink); color: #fff; font-weight: 700; cursor: pointer; }
+  .btn-primary:disabled { opacity: .5; cursor: default; }
+  .err { color: var(--accent); font-size: 14px; margin-top: 12px; min-height: 20px; }
+
+  /* 상단 바 */
+  .top { position: sticky; top: 0; z-index: 5; background: rgba(245,244,241,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .top-in { max-width: 1040px; margin: 0 auto; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .top-actions { display: flex; gap: 6px; }
+  .btn-ghost { height: 36px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 80px; }
+  .head h1 { font-size: 26px; letter-spacing: -0.02em; margin: 0 0 4px; }
+  .head .sub { color: var(--ink-3); font-size: 13px; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 20px 0 22px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; text-align: left; cursor: pointer; }
+  .stat .k { font-size: 13px; color: var(--ink-2); }
+  .stat .v { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .stat.warn .v { color: var(--accent); }
+  .stat.active { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+
+  .bar { display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 14px; }
+  .tabs { display: inline-flex; background: #EAE8E4; border-radius: 999px; padding: 3px; }
+  .tab { border: 0; background: transparent; height: 34px; padding: 0 14px; border-radius: 999px; font-size: 14px; font-weight: 600; color: var(--ink-2); cursor: pointer; }
+  .tab.on { background: #fff; color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+  .search { flex: 1; min-width: 180px; max-width: 320px; height: 40px; border: 1px solid var(--line); border-radius: 999px; padding: 0 16px; background: #fff; outline: none; }
+  .search:focus { border-color: var(--ink); }
+
+  .list { display: grid; gap: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 20px; }
+  .card.pending { border-left: 4px solid var(--accent); }
+  .card.done { opacity: .78; }
+  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-3); }
+  .chip { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 999px; font-size: 12px; font-weight: 700; background: #F0EEEA; color: var(--ink-2); }
+  .chip.area-hs { background: #111; color: #fff; }
+  .chip.area-us { background: #E9EEF7; color: #26457A; }
+  .chip.area-both { background: #EFE9F6; color: #563A80; }
+  .chip.late { background: var(--accent); color: #fff; }
+  .chip.wait { background: var(--accent-soft); color: var(--accent); }
+  .chip.ok { background: var(--ok-soft); color: var(--ok); }
+  .company { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; margin: 8px 0 4px; word-break: keep-all; overflow-wrap: anywhere; }
+  .who { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; color: var(--ink-2); }
+  .who a { text-decoration: none; border-bottom: 1px solid var(--line); }
+  .who a:hover { border-color: var(--ink); }
+  .msg { margin-top: 14px; padding: 14px 16px; background: #FAF9F7; border-radius: 10px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; color: #262626; }
+  .msg.clamp { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+  .more { border: 0; background: none; padding: 6px 0 0; font-size: 13px; font-weight: 600; color: var(--ink-2); cursor: pointer; }
+
+  .side { display: flex; flex-direction: column; gap: 10px; }
+  .done-btn { height: 46px; border-radius: 12px; border: 1px solid var(--ink); background: #fff; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .done-btn .box { width: 18px; height: 18px; border-radius: 5px; border: 2px solid var(--ink); display: grid; place-items: center; }
+  .done-btn.on { background: var(--ok); border-color: var(--ok); color: #fff; }
+  .done-btn.on .box { border-color: #fff; background: #fff; }
+  .done-btn.on .box::after { content: ''; width: 8px; height: 4px; border-left: 2px solid var(--ok); border-bottom: 2px solid var(--ok); transform: rotate(-45deg) translate(1px, -1px); }
+  .done-btn:disabled { opacity: .5; }
+  .done-at { font-size: 12px; color: var(--ink-3); text-align: center; min-height: 16px; }
+  .memo { width: 100%; min-height: 92px; resize: vertical; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 14px; outline: none; background: #fff; }
+  .memo:focus { border-color: var(--ink); }
+  .memo-state { font-size: 12px; color: var(--ink-3); min-height: 16px; }
+  .side-links { display: flex; gap: 6px; }
+  .side-links a { flex: 1; text-align: center; height: 36px; line-height: 34px; border: 1px solid var(--line); border-radius: 10px; font-size: 13px; font-weight: 600; text-decoration: none; }
+  .side-links a:hover { border-color: var(--ink); }
+
+  .empty { text-align: center; padding: 60px 16px; color: var(--ink-3); background: var(--card); border: 1px dashed var(--line); border-radius: var(--radius); }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 999px; font-size: 14px; z-index: 20; }
+
+  @media (max-width: 760px) {
+    .card { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 18px 16px; }
+    .stat { padding: 12px 14px; }
+    .stat .v { font-size: 24px; }
+    .head h1 { font-size: 22px; }
+    .search { max-width: none; }
+    .btn-ghost .lbl { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<section class="login" id="login">
+  <form class="login-card" id="loginForm" autocomplete="on">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">드에프 DEF</span></div>
+    <h1>문의 관리</h1>
+    <p>홈페이지로 들어온 문의를 확인하고 회신 여부를 체크합니다.</p>
+    <input type="text" name="username" value="admin" autocomplete="username" class="hidden" aria-hidden="true" tabindex="-1">
+    <input class="field" id="pw" type="password" placeholder="관리자 비밀번호" autocomplete="current-password" required>
+    <label class="remember"><input type="checkbox" id="remember" checked> 이 기기에서 로그인 유지</label>
+    <button class="btn-primary" id="loginBtn" type="submit">로그인</button>
+    <div class="err" id="loginErr" role="alert"></div>
+  </form>
+</section>
+
+<div id="app" class="hidden">
+  <header class="top">
+    <div class="top-in">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">문의 관리</span></div>
+      <div class="top-actions">
+        <button class="btn-ghost" id="refresh" type="button" title="새로고침">↻ <span class="lbl">새로고침</span></button>
+        <a class="btn-ghost" id="sheetLink" target="_blank" rel="noopener" title="시트 열기">▦ <span class="lbl">시트 열기</span></a>
+        <button class="btn-ghost" id="logout" type="button" title="로그아웃">로그아웃</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="head">
+      <h1>홈페이지 문의</h1>
+      <div class="sub" id="updated">불러오는 중…</div>
+    </div>
+
+    <div class="stats">
+      <button class="stat warn" data-filter="pending" type="button"><div class="k">회신 대기</div><div class="v" id="nPending">-</div></button>
+      <button class="stat warn" data-filter="late" type="button"><div class="k">2일 이상 지남</div><div class="v" id="nLate">-</div></button>
+      <button class="stat" data-filter="all" type="button"><div class="k">전체</div><div class="v" id="nAll">-</div></button>
+    </div>
+
+    <div class="bar">
+      <div class="tabs" role="tablist">
+        <button class="tab" data-filter="pending" type="button">회신 대기</button>
+        <button class="tab" data-filter="done" type="button">회신 완료</button>
+        <button class="tab" data-filter="all" type="button">전체</button>
+      </div>
+      <input class="search" id="q" type="search" placeholder="회사명, 담당자, 연락처 검색">
+    </div>
+
+    <div class="list" id="list"></div>
+  </main>
+</div>
+
+<div class="toast hidden" id="toast" role="status"></div>
+
+<script>
+(function () {
+  var API = 'https://script.google.com/macros/s/AKfycbwk3QnIo4NJyg2U3ukPYUYVvhkA3EmAPKzzzHhrm10UzIK57fWAzpuEALSWobkl6zMe6w/exec';
+  var KEY_NAME = 'def-admin-key';
+  var DAY = 86400000;
+  var state = { key: '', items: [], filter: 'pending', q: '' };
+
+  var $ = function (id) { return document.getElementById(id); };
+  function store(get, val, remember) {
+    try {
+      if (get) return localStorage.getItem(KEY_NAME) || sessionStorage.getItem(KEY_NAME) || '';
+      localStorage.removeItem(KEY_NAME); sessionStorage.removeItem(KEY_NAME);
+      if (val) (remember ? localStorage : sessionStorage).setItem(KEY_NAME, val);
+    } catch (e) { return ''; }
+  }
+  function api(params) {
+    var body = new URLSearchParams();
+    Object.keys(params).forEach(function (k) { body.append(k, params[k]); });
+    body.append('key', state.key);
+    return fetch(API, { method: 'POST', body: body }).then(function (r) { return r.json(); });
+  }
+  function toast(t) {
+    var el = $('toast'); el.textContent = t; el.classList.remove('hidden');
+    clearTimeout(toast.t); toast.t = setTimeout(function () { el.classList.add('hidden'); }, 2200);
+  }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function fmt(ts, withTime) {
+    if (!ts) return '';
+    var d = new Date(ts);
+    var s = d.getFullYear() + '.' + pad(d.getMonth() + 1) + '.' + pad(d.getDate());
+    return withTime ? s + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) : s;
+  }
+  function days(ts) { return Math.floor((Date.now() - ts) / DAY); }
+  function isLate(it) { return !it.done && Date.now() - it.ts >= 2 * DAY; }
+  function telHref(t) { return 'tel:' + String(t || '').replace(/[^0-9+]/g, ''); }
+  function areaClass(a) { return /둘/.test(a) ? 'area-both' : /미국/.test(a) ? 'area-us' : /홈쇼핑/.test(a) ? 'area-hs' : ''; }
+
+  function showLogin(msg) {
+    $('app').classList.add('hidden'); $('login').classList.remove('hidden');
+    $('loginErr').textContent = msg || '';
+    $('pw').value = ''; setTimeout(function () { $('pw').focus(); }, 50);
+  }
+  function load(silent) {
+    if (!silent) $('updated').textContent = '불러오는 중…';
+    return api({ action: 'list' }).then(function (d) {
+      if (!d.ok) { store(false, ''); state.key = ''; showLogin(d.error === 'auth' ? '비밀번호가 바뀌었거나 틀렸습니다. 다시 로그인해 주세요.' : '불러오지 못했습니다.'); return false; }
+      state.items = d.items.sort(function (a, b) { return b.ts - a.ts; });
+      if (d.sheet) $('sheetLink').href = d.sheet;
+      $('updated').textContent = '마지막 확인 ' + fmt(Date.now(), true);
+      render();
+      return true;
+    }).catch(function () { $('updated').textContent = '연결이 원활하지 않습니다. 잠시 후 새로고침해 주세요.'; return false; });
+  }
+
+  function render() {
+    var it = state.items;
+    $('nPending').textContent = it.filter(function (x) { return !x.done; }).length;
+    $('nLate').textContent = it.filter(isLate).length;
+    $('nAll').textContent = it.length;
+    document.querySelectorAll('[data-filter]').forEach(function (b) {
+      var on = b.getAttribute('data-filter') === state.filter;
+      b.classList.toggle(b.classList.contains('tab') ? 'on' : 'active', on);
+    });
+    var q = state.q.trim().toLowerCase();
+    var rows = it.filter(function (x) {
+      if (state.filter === 'pending' && x.done) return false;
+      if (state.filter === 'done' && !x.done) return false;
+      if (state.filter === 'late' && !isLate(x)) return false;
+      if (!q) return true;
+      return [x.company, x.name, x.tel, x.email, x.message, x.memo].join(' ').toLowerCase().indexOf(q) > -1;
+    });
+    if (!rows.length) {
+      $('list').innerHTML = '<div class="empty">' + (state.filter === 'pending' || state.filter === 'late' ? '회신을 기다리는 문의가 없습니다.' : '표시할 문의가 없습니다.') + '</div>';
+      return;
+    }
+    $('list').innerHTML = rows.map(card).join('');
+  }
+
+  function card(x) {
+    var d = days(x.ts);
+    var status = x.done ? '<span class="chip ok">회신 완료</span>'
+      : isLate(x) ? '<span class="chip late">' + d + '일째 대기</span>'
+      : '<span class="chip wait">' + (d === 0 ? '오늘 접수' : d + '일째 대기') + '</span>';
+    var subj = encodeURIComponent('[드에프] 문의 주셔서 감사합니다');
+    var long = String(x.message || '').length > 220 || String(x.message || '').split('\n').length > 5;
+    return '<article class="card ' + (x.done ? 'done' : 'pending') + '" data-row="' + x.row + '" data-ts="' + x.ts + '">' +
+      '<div>' +
+        '<div class="meta"><span>' + fmt(x.ts, true) + '</span>' + (x.area ? '<span class="chip ' + areaClass(x.area) + '">' + esc(x.area) + '</span>' : '') + status + '</div>' +
+        '<div class="company">' + esc(x.company || '(회사명 없음)') + '</div>' +
+        '<div class="who">' +
+          (x.name ? '<span>' + esc(x.name) + '</span>' : '') +
+          (x.tel ? '<a href="' + telHref(x.tel) + '">' + esc(x.tel) + '</a>' : '') +
+          (x.email ? '<a href="mailto:' + esc(x.email) + '?subject=' + subj + '">' + esc(x.email) + '</a>' : '') +
+          (x.web ? '<a href="' + esc(/^https?:/i.test(x.web) ? x.web : 'https://' + x.web) + '" target="_blank" rel="noopener noreferrer">' + esc(x.web) + '</a>' : '') +
+        '</div>' +
+        '<div class="msg' + (long ? ' clamp' : '') + '">' + esc(x.message) + '</div>' +
+        (long ? '<button class="more" type="button" data-act="more">전체 보기</button>' : '') +
+      '</div>' +
+      '<div class="side">' +
+        '<button class="done-btn' + (x.done ? ' on' : '') + '" type="button" data-act="done"><span class="box"></span>' + (x.done ? '회신 완료' : '회신 완료로 표시') + '</button>' +
+        '<div class="done-at">' + (x.done && x.doneAt ? fmt(x.doneAt) + ' 회신' : '') + '</div>' +
+        '<textarea class="memo" data-act="memo" placeholder="메모 (예: 11/5 통화, 제안서 받기로 함)">' + esc(x.memo) + '</textarea>' +
+        '<div class="memo-state"></div>' +
+        '<div class="side-links">' +
+          (x.tel ? '<a href="' + telHref(x.tel) + '">전화</a>' : '') +
+          (x.email ? '<a href="mailto:' + esc(x.email) + '?subject=' + subj + '">메일 회신</a>' : '') +
+        '</div>' +
+      '</div>' +
+    '</article>';
+  }
+
+  function itemOf(el) {
+    var c = el.closest('.card'); if (!c) return null;
+    var row = +c.getAttribute('data-row'), ts = +c.getAttribute('data-ts');
+    for (var i = 0; i < state.items.length; i++) if (state.items[i].row === row && state.items[i].ts === ts) return state.items[i];
+    return null;
+  }
+
+  $('list').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]'); if (!b) return;
+    var act = b.getAttribute('data-act');
+    if (act === 'more') { var m = b.previousElementSibling; m.classList.toggle('clamp'); b.textContent = m.classList.contains('clamp') ? '전체 보기' : '접기'; return; }
+    if (act !== 'done') return;
+    var x = itemOf(b); if (!x) return;
+    var next = !x.done;
+    b.disabled = true;
+    api({ action: 'update', row: x.row, ts: x.ts, done: String(next) }).then(function (d) {
+      if (!d.ok) { toast(d.error === 'moved' ? '시트가 바뀌었습니다. 새로고침합니다.' : '저장하지 못했습니다.'); return load(true); }
+      x.done = next; x.doneAt = next ? Date.now() : 0;
+      toast(next ? '회신 완료로 표시했습니다.' : '회신 대기로 되돌렸습니다.');
+      render();
+    }).catch(function () { toast('저장하지 못했습니다. 다시 눌러 주세요.'); b.disabled = false; });
+  });
+
+  $('list').addEventListener('focusout', function (e) {
+    var t = e.target; if (!t.matches || !t.matches('.memo')) return;
+    var x = itemOf(t); if (!x || (x.memo || '') === t.value) return;
+    var s = t.nextElementSibling; s.textContent = '저장 중…';
+    var val = t.value;
+    api({ action: 'update', row: x.row, ts: x.ts, memo: val }).then(function (d) {
+      if (!d.ok) { s.textContent = '저장하지 못했습니다.'; return; }
+      x.memo = val; s.textContent = '메모 저장됨';
+    }).catch(function () { s.textContent = '저장하지 못했습니다.'; });
+  });
+
+  document.querySelectorAll('[data-filter]').forEach(function (b) {
+    b.addEventListener('click', function () { state.filter = b.getAttribute('data-filter'); render(); });
+  });
+  $('q').addEventListener('input', function () { state.q = this.value; render(); });
+  $('refresh').addEventListener('click', function () { load(); });
+  $('logout').addEventListener('click', function () { store(false, ''); state.key = ''; showLogin(''); });
+
+  $('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var pw = $('pw').value.trim(); if (!pw) return;
+    $('loginBtn').disabled = true; $('loginErr').textContent = '';
+    state.key = pw;
+    api({ action: 'list' }).then(function (d) {
+      $('loginBtn').disabled = false;
+      if (!d.ok) { state.key = ''; $('loginErr').textContent = '비밀번호가 맞지 않습니다.'; return; }
+      store(false, pw, $('remember').checked);
+      $('login').classList.add('hidden'); $('app').classList.remove('hidden');
+      load();
+    }).catch(function () { $('loginBtn').disabled = false; $('loginErr').textContent = '연결하지 못했습니다. 잠시 후 다시 시도해 주세요.'; });
+  });
+
+  // 1분마다, 그리고 다시 이 탭을 볼 때 자동으로 새 문의 확인
+  setInterval(function () { if (state.key && !document.hidden && !document.activeElement.matches('.memo')) load(true); }, 60000);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden && state.key) load(true); });
+
+  state.key = store(true);
+  if (state.key) { $('login').classList.add('hidden'); $('app').classList.remove('hidden'); load(); }
+  else showLogin('');
+})();
+</script>
+</body>
+</html>
