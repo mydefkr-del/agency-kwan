@@ -105,8 +105,16 @@
   .memo:focus { border-color: var(--ink); }
   .memo-state { font-size: 12px; color: var(--ink-3); min-height: 16px; }
   .side-links { display: flex; gap: 6px; }
-  .side-links a { flex: 1; text-align: center; height: 36px; line-height: 34px; border: 1px solid var(--line); border-radius: 10px; font-size: 13px; font-weight: 600; text-decoration: none; }
-  .side-links a:hover { border-color: var(--ink); }
+  .side-links a, .side-links button { flex: 1; background: #fff; cursor: pointer; font-family: inherit; color: inherit; text-align: center; height: 36px; line-height: 34px; border: 1px solid var(--line); border-radius: 10px; font-size: 13px; font-weight: 600; text-decoration: none; }
+  .side-links a:hover, .side-links button:hover { border-color: var(--ink); }
+  .side-links .mail-btn { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .modal.compose { max-width: 640px; max-height: calc(100dvh - 32px); overflow: auto; }
+  .compose .row { display: flex; gap: 8px; align-items: baseline; font-size: 14px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .compose .row b { width: 64px; flex: none; color: var(--ink-3); font-weight: 600; font-size: 13px; }
+  .compose .row span { overflow-wrap: anywhere; }
+  .compose .from-warn { color: var(--accent); font-size: 12px; margin-left: 4px; }
+  .compose .field { margin-top: 12px; }
+  .compose textarea.field { height: 320px; padding: 12px 14px; resize: vertical; line-height: 1.6; }
 
   .notice { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 16px; padding: 14px 16px; border-radius: var(--radius); background: var(--accent-soft); color: #8A2A10; font-size: 14px; font-weight: 600; }
   .notice button { height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 700; cursor: pointer; }
@@ -255,6 +263,18 @@
   </form>
 </div>
 
+<div class="modal-bg hidden" id="mailModal">
+  <form class="modal compose" id="mailForm">
+    <h2>메일 회신</h2>
+    <div class="row"><b>받는 사람</b><span id="mTo"></span></div>
+    <div class="row"><b>보내는 사람</b><span id="mFrom"></span></div>
+    <input class="field" id="mSubject" type="text" placeholder="제목" maxlength="200" required>
+    <textarea class="field" id="mBody" placeholder="내용" required></textarea>
+    <div class="err" id="mErr" role="alert"></div>
+    <div class="modal-actions"><button class="btn-cancel" type="button" id="mCancel">취소</button><button class="btn-primary" type="submit" id="mSend">보내기</button></div>
+  </form>
+</div>
+
 <div class="toast hidden" id="toast" role="status"></div>
 
 <script>
@@ -306,6 +326,7 @@
       if (!d.ok) { store(false, ''); state.key = ''; showLogin(d.error === 'auth' ? '비밀번호가 바뀌었거나 틀렸습니다. 다시 로그인해 주세요.' : '불러오지 못했습니다.'); return false; }
       state.items = d.items.sort(function (a, b) { return b.ts - a.ts; });
       if (d.sheet) $('sheetLink').href = d.sheet;
+      state.from = d.from || '';
       $('tempNotice').classList.toggle('hidden', !d.temp);
       $('updated').textContent = '마지막 확인 ' + fmt(Date.now(), true);
       render();
@@ -429,7 +450,7 @@
         '<div class="memo-state"></div>' +
         '<div class="side-links">' +
           (x.tel ? '<a href="' + telHref(x.tel) + '">전화</a>' : '') +
-          (x.email ? '<a href="mailto:' + esc(x.email) + '?subject=' + subj + '">메일 회신</a>' : '') +
+          (x.email ? '<button type="button" class="mail-btn" data-act="reply">메일 회신</button>' : '') +
         '</div>' +
       '</div>' +
     '</article>';
@@ -446,6 +467,7 @@
     var b = e.target.closest('[data-act]'); if (!b) return;
     var act = b.getAttribute('data-act');
     if (act === 'more') { var m = b.previousElementSibling; m.classList.toggle('clamp'); b.textContent = m.classList.contains('clamp') ? '전체 보기' : '접기'; return; }
+    if (act === 'reply') { var rx = itemOf(b); if (rx) openReply(rx); return; }
     if (act !== 'done') return;
     var x = itemOf(b); if (!x) return;
     var next = !x.done;
@@ -505,6 +527,36 @@
       $('pwModal').classList.add('hidden'); $('tempNotice').classList.add('hidden');
       toast('비밀번호를 바꿨습니다. 다음부터 새 비밀번호로 로그인하세요.');
     }).catch(function () { $('pwSave').disabled = false; $('pwErr').textContent = '연결하지 못했습니다. 다시 시도해 주세요.'; });
+  });
+
+  // 메일 회신: 관리자 페이지에서 바로 보내기 (보내는 주소 def@deflab.kr)
+  var mailTarget = null;
+  function openReply(x) {
+    mailTarget = x;
+    $('mTo').textContent = (x.company ? x.company + ' · ' : '') + x.email;
+    $('mFrom').innerHTML = state.from ? esc(state.from) : '드에프 DEF <span class="from-warn">(def@deflab.kr 연결 전: 답장은 def@deflab.kr로 옵니다)</span>';
+    $('mSubject').value = '[드에프] 문의 주셔서 감사합니다' + (x.company ? ' · ' + x.company : '');
+    $('mBody').value = '안녕하세요, ' + (x.company ? x.company + ' ' : '') + '담당자님.\n드에프(DEF)입니다. 홈페이지로 문의 주셔서 감사합니다.\n\n\n\n감사합니다.\n\n드에프 DEF\ndef@deflab.kr  |  agency-def.com\n\n\n---------- 보내주신 문의 (' + fmt(x.ts, true) + ') ----------\n' + (x.message || '');
+    $('mErr').textContent = '';
+    $('mailModal').classList.remove('hidden');
+    setTimeout(function () { var t = $('mBody'); t.focus(); var pos = t.value.indexOf('\n\n\n\n') + 2; t.setSelectionRange(pos, pos); t.scrollTop = 0; }, 50);
+  }
+  $('mCancel').addEventListener('click', function () { $('mailModal').classList.add('hidden'); });
+  $('mailForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var x = mailTarget; if (!x) return;
+    var subject = $('mSubject').value.trim(), body = $('mBody').value;
+    if (!subject || !body.trim()) { $('mErr').textContent = '제목과 내용을 적어 주세요.'; return; }
+    if (!confirm(x.email + ' 로 메일을 보낼까요?')) return;
+    $('mSend').disabled = true; $('mSend').textContent = '보내는 중…'; $('mErr').textContent = '';
+    api({ action: 'reply', row: x.row, ts: x.ts, subject: subject, body: body }).then(function (d) {
+      $('mSend').disabled = false; $('mSend').textContent = '보내기';
+      if (!d.ok) { $('mErr').textContent = { email: '이 문의에는 올바른 이메일 주소가 없습니다.', moved: '시트가 바뀌었습니다. 새로고침 후 다시 시도해 주세요.', empty: '제목과 내용을 적어 주세요.', auth: '다시 로그인해 주세요.' }[d.error] || '보내지 못했습니다. 잠시 후 다시 시도해 주세요.'; return; }
+      x.done = true; x.doneAt = d.doneAt || Date.now(); if (d.memo) x.memo = d.memo;
+      $('mailModal').classList.add('hidden');
+      toast('메일을 보냈습니다. 회신 완료로 표시했습니다.');
+      render();
+    }).catch(function () { $('mSend').disabled = false; $('mSend').textContent = '보내기'; $('mErr').textContent = '연결하지 못했습니다. 다시 시도해 주세요.'; });
   });
 
   $('loginForm').addEventListener('submit', function (e) {
