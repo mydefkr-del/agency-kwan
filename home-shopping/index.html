@@ -93,6 +93,11 @@ window.defSendInquiry = function (d) {
 <style>
 html{scroll-behavior:smooth}
 html,body{overflow-x:clip}
+:root{--vh100:100vh}
+@supports (height:100svh){:root{--vh100:100svh}}
+@media (max-width:820px){
+  header,[data-tabbar]{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:#FFFFFF!important}
+}
 /* 문의 폼: 작성 팁 안내 (커서를 올리거나 누르면 열림) */
 [data-guide]{position:relative;display:inline-flex;align-items:center;gap:6px;cursor:help;outline:none}
 [data-guide-pop]{display:none;position:absolute;right:0;top:calc(100% + 10px);z-index:50;box-sizing:border-box;width:min(560px,calc(100vw - 40px));max-height:min(70vh,640px);overflow:auto;padding:24px 24px 20px;background:#FFFFFF;color:#0E0E0E;border:1px solid #0E0E0E;box-shadow:0 18px 50px rgba(0,0,0,.35);text-align:left;cursor:auto;font:400 15px/1.75 'Pretendard Variable',sans-serif;letter-spacing:0}
@@ -148,7 +153,7 @@ a:hover{color:#E8461E}
 </sc-if>
 
 <sc-if value="{{ hasTabs }}" hint-placeholder-val="{{ false }}">
-  <div style="position:sticky;top:68px;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E3E3DF">
+  <div data-tabbar="1" style="position:sticky;top:68px;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E3E3DF">
     <div style="max-width:1360px;margin:0 auto;padding:10px clamp(20px,4vw,56px);display:flex;align-items:center;gap:8px;overflow-x:auto;white-space:nowrap">
       <span style="flex:0 0 auto;margin-right:12px;font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#6E6E6E">GLOBAL /</span>
       <sc-for list="{{ usTabs }}" as="t" hint-placeholder-count="6">
@@ -640,8 +645,8 @@ function useCanvasLoop(draw) {
     const cv = ref.current; if (!cv) return; const ctx = cv.getContext('2d');
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let W = 0, H = 0, dpr = 1, raf = 0, vis = true; const t0 = performance.now(), st = {};
-    const frame = now => { raf = 0; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H); draw(ctx, W, H, ((now || performance.now()) - t0) / 1000, st); if (vis && !reduce) raf = requestAnimationFrame(frame); };
-    const size = () => { const r = cv.parentElement.getBoundingClientRect(); dpr = Math.min(2, window.devicePixelRatio || 1); W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + 'px'; cv.style.height = H + 'px'; if (!raf) raf = requestAnimationFrame(frame); };
+    let lastF = 0; const frame = now => { raf = 0; if (window.innerWidth < 768 && now && now - lastF < 32) { if (vis && !reduce) raf = requestAnimationFrame(frame); return; } lastF = now || 0; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H); draw(ctx, W, H, ((now || performance.now()) - t0) / 1000, st); if (vis && !reduce) raf = requestAnimationFrame(frame); };
+    const size = () => { const r = cv.parentElement.getBoundingClientRect(); const nd = Math.min(window.innerWidth < 768 ? 1.5 : 2, window.devicePixelRatio || 1); if (Math.abs(r.width - W) < 1 && Math.abs(r.height - H) < 1 && nd === dpr) return; dpr = nd; W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + 'px'; cv.style.height = H + 'px'; if (!raf) raf = requestAnimationFrame(frame); };
     const ro = new ResizeObserver(size); ro.observe(cv.parentElement);
     const io = new IntersectionObserver(e => { vis = e[0].isIntersecting; if (vis && !raf) raf = requestAnimationFrame(frame); }); io.observe(cv);
     size(); return () => { cancelAnimationFrame(raf); ro.disconnect(); io.disconnect(); };
@@ -783,7 +788,7 @@ function HSHero() {
       h('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', ...mono, fontSize: 11, color: '#E3E3DF' } }, h('span', { style: { display: 'flex', alignItems: 'center', gap: 8 } }, h('span', { style: { width: 10, height: 10, borderRadius: '50%', border: '1.5px solid ' + (r[3] === 'SOLD OUT' ? '#CD5C54' : '#9A9DA1') } }), r[0] + ' / ' + r[1]), h('span', { style: { color: '#9A9DA1' } }, r[2])),
       h('div', { style: { display: 'flex', justifyContent: 'space-between', ...mono, fontSize: 10, color: '#7A7D81' } }, h('span', { style: { filter: 'blur(3px)' } }, 'BRAND CONFIDENTIAL'), h('span', { style: { color: r[3] === 'SOLD OUT' ? '#E07C74' : '#BDBDBD' } }, r[3]))); }));
   const cell = (a, b) => h('span', { style: { paddingLeft: 12, borderLeft: '1px solid #8A8D91', ...mono, fontSize: 11, lineHeight: 1.45, color: '#E3E3DF', whiteSpace: 'pre-line' } }, a + '\n' + b);
-  return h('section', { 'data-screen-label': 'Home Shopping · Hero', style: { position: 'relative', height: 'clamp(560px,calc(100vh - 72px),920px)', background: '#0E0E0E', overflow: 'hidden' } },
+  return h('section', { 'data-screen-label': 'Home Shopping · Hero', style: { position: 'relative', height: 'clamp(560px,calc(var(--vh100) - 72px),920px)', background: '#0E0E0E', overflow: 'hidden' } },
     h('canvas', { ref, style: { position: 'absolute', inset: 0, display: 'block' } }),
     h('div', { style: { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(27,29,32,0) 45%, rgba(27,29,32,.55) 100%)', pointerEvents: 'none' } }),
     panel,
@@ -1145,14 +1150,15 @@ function ComradeViz() {
     const ctx = cv.getContext('2d');
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let W = 0, H = 0, dpr = 1, raf = 0, vis = true; const t0 = performance.now();
-    const size = () => { const r = cv.parentElement.getBoundingClientRect(); dpr = Math.min(2, window.devicePixelRatio || 1); W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + 'px'; cv.style.height = H + 'px'; if (!raf) raf = requestAnimationFrame(draw); };
+    const size = () => { const r = cv.parentElement.getBoundingClientRect(); const nd = Math.min(window.innerWidth < 768 ? 1.5 : 2, window.devicePixelRatio || 1); if (Math.abs(r.width - W) < 1 && Math.abs(r.height - H) < 1 && nd === dpr) return; dpr = nd; W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + 'px'; cv.style.height = H + 'px'; if (!raf) raf = requestAnimationFrame(draw); };
     const A = [[1,1,1],[-1,-1,1],[-1,1,-1],[1,-1,-1]], B = A.map(v => v.map(x => -x));
     const CU = []; for (let i = 0; i < 8; i++) CU.push([i & 1 ? 1 : -1, i & 2 ? 1 : -1, i & 4 ? 1 : -1]);
     const CE = []; for (let i = 0; i < 8; i++) for (let j = i + 1; j < 8; j++) if ([0,1,2].filter(k => CU[i][k] !== CU[j][k]).length === 1) CE.push([i, j]);
     const TE = [[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]];
     const line = (p, q) => { ctx.beginPath(); ctx.moveTo(p[0], p[1]); ctx.lineTo(q[0], q[1]); ctx.stroke(); };
+    let lastF = 0;
     function draw(now) {
-      raf = 0; const t = ((now || performance.now()) - t0) / 1000;
+      raf = 0; if (window.innerWidth < 768 && now && now - lastF < 32) { if (vis && !reduce) raf = requestAnimationFrame(draw); return; } lastF = now || 0; const t = ((now || performance.now()) - t0) / 1000;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
       const cx = W / 2, cy = H / 2, R = Math.min(W, H) * 0.24;
       ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(242,242,242,.14)';
@@ -1280,8 +1286,8 @@ class Component extends DCLogic {
         if (!en.isIntersecting) return;
         const el = en.target; this._io.unobserve(el);
         const isImg = el.tagName === 'FIGURE' || el.tagName === 'ARTICLE';
-        const kf = isImg ? [{ opacity: 0, clipPath: 'inset(0 0 100% 0)' }, { opacity: 1, clipPath: 'inset(0 0 0% 0)' }] : [{ opacity: 0, transform: 'translateY(28px)' }, { opacity: 1, transform: 'none' }];
-        const a = el.animate(kf, { duration: reduce ? 1 : (isImg ? 1100 : 900), delay: reduce ? 0 : (k++) * 70, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'backwards' });
+        const narrow = window.innerWidth < 768; const kf = narrow ? [{ opacity: 0 }, { opacity: 1 }] : isImg ? [{ opacity: 0, clipPath: 'inset(0 0 100% 0)' }, { opacity: 1, clipPath: 'inset(0 0 0% 0)' }] : [{ opacity: 0, transform: 'translateY(28px)' }, { opacity: 1, transform: 'none' }];
+        const a = el.animate(kf, { duration: reduce ? 1 : (narrow ? 450 : (isImg ? 1100 : 900)), delay: reduce || narrow ? 0 : (k++) * 70, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'backwards' });
         el.style.opacity = '';
         a.onfinish = () => { el.style.clipPath = ''; };
       });
@@ -1296,7 +1302,7 @@ class Component extends DCLogic {
     }), { rootMargin: '0px 0px -10% 0px' });
     this.onScroll = () => {
       document.querySelectorAll('[data-fx-pin]').forEach(sec => {
-        const r = sec.getBoundingClientRect(), span = Math.max(1, r.height - window.innerHeight);
+        const r = sec.getBoundingClientRect(), span = Math.max(1, r.height - (this._vh || window.innerHeight));
         const p = Math.min(1, Math.max(0, -r.top / span));
         const ws = sec.querySelectorAll('[data-fx-word]'), lit = p * ws.length * 1.08;
         ws.forEach((w, i) => { w.style.opacity = i < lit ? '1' : '0.16'; });
@@ -1313,7 +1319,7 @@ class Component extends DCLogic {
       else if (x.startsWith('about')) this.setState({ page: 'about', asub: x, menu: false, open: null });
       else if (PAGES.some(p => p.id === x)) this.setState({ page: x, menu: false, open: null });
     };
-    this.onResize = () => this.setState({ w: window.innerWidth });
+    this.onResize = () => { const w = window.innerWidth; if (w !== this._lastW) { this._lastW = w; this._vh = window.innerHeight; this.setState({ w }); } };
     this.onHash(); this.onResize();
     window.addEventListener('hashchange', this.onHash);
     window.addEventListener('resize', this.onResize);
